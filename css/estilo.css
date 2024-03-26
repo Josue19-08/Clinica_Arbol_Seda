@@ -1,25 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Helvetica+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
-
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
-
 }
 
-h1{
-
+h1 {
     text-align: center;
     background-color: rgb(0, 73, 83);
     color: white;
     padding: 20px;
     font-size: 2.5em;
-    
 }
 
 /* Estilos para el header */
@@ -68,8 +61,30 @@ body {
     text-align: center;
 }
 
-footer {
+/* Estilos para el contenido principal */
+.contenido {
+    padding: 20px; /* Espaciado interno del contenido */
+}
 
+/* Estilos para el carrusel de imágenes */
+.carrusel-slide {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+}
+
+.carrusel-slide img {
+    scroll-snap-align: start;
+}
+
+/* Estilos para la descripción */
+.descripcion {
+    margin-top: 20px; /* Espaciado superior de la descripción */
+    text-align: justify; /* Justificar el texto */
+}
+
+/* Estilos para el pie de página */
+footer {
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -77,7 +92,6 @@ footer {
     color: #fff;
     text-align: center;
     padding: 20px 0;
-    text-align: center;
 }
 
 footer p {
@@ -85,26 +99,11 @@ footer p {
 }
 
 footer a {
-
     color: #fff;
     text-decoration: none;
     transition: color 0.3s ease;
-
 }
 
 footer a:hover {
     color: #f2f2f2;
 }
-
-/*
-header {
-    background-color: red;
-}
-
-body {
-    background-color: yellow;
-}
-
-footer {
-    background-color: green;
-}*/
