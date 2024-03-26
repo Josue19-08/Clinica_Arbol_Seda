@@ -1,0 +1,70 @@
+h2 {
+    margin-top: 100px;
+    text-align: center;
+    font-size: 30px;
+}
+
+p {
+    margin-top: 10PX;
+    text-align: center;
+    font-size: 25px;
+}
+
+.descripcionEquipoSistema {
+    background-color: lightgrey;
+    padding: 20px; /* Añade un poco de espacio alrededor del contenido */
+    margin-left: 700px;
+    margin-right: 700px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 25px;
+}
+
+.historia {
+    background-color: lightgrey;
+    padding: 20px; /* Añade un poco de espacio alrededor del contenido */
+    margin-left: 700px;
+    margin-right: 700px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 25px;
+}
+
+.mision {
+    background-color: lightgrey;
+    padding: 20px; /* Añade un poco de espacio alrededor del contenido */
+    margin-left: 700px;
+    margin-right: 700px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 25px;
+}
+
+.vision {
+    background-color: lightgrey;
+    padding: 20px; /* Añade un poco de espacio alrededor del contenido */
+    margin-left: 700px;
+    margin-right: 700px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 25px;
+}
+
+.valores {
+    background-color: lightgrey;
+    padding: 20px; /* Añade un poco de espacio alrededor del contenido */
+    margin-left: 700px;
+    margin-right: 700px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 25px;
+}
+.equipo {
+    background-color: lightgrey;
+    padding: 20px; /* Añade un poco de espacio alrededor del contenido */
+    margin-left: 700px;
+    margin-right: 700px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 25px;
+}
