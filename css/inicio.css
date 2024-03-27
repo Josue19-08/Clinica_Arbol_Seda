@@ -12,15 +12,13 @@
     }
 
     .descripcion {
-        display: flex;
-        align-items: center;
-        padding: 40px;
         font-size: 1.5em;
+        margin-top: 50px;
     }
 
     .carousel {
         position: relative;
-        overflow: hidden;
+       
     }
 
     .carousel-inner {
