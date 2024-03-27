@@ -64,7 +64,7 @@ nav a {
 nav a:hover {
     color: white; /* Cambiar color al pasar el mouse */
     background-color: gray;
-    border-radius: 20%;
+    border-radius: 10px;
     padding: 2px 2px; /* Espaciado interno del header */
 }
 
@@ -164,7 +164,7 @@ footer a:hover {
     nav a:hover {
         color: white; /* Cambiar color al pasar el mouse */
         background-color: gray;
-        border-radius: 20%;
+        border-radius: 10px;
         padding: 2px 2px; /* Espaciado interno del header */
     }
     
@@ -262,7 +262,7 @@ footer a:hover {
     nav a:hover {
         color: white; /* Cambiar color al pasar el mouse */
         background-color: gray;
-        border-radius: 20%;
+        border-radius: 10px;
         padding: 2px 2px; /* Espaciado interno del header */
     }
     
