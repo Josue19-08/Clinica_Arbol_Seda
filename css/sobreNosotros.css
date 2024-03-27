@@ -1,70 +1,112 @@
-h2 {
-    margin-top: 100px;
-    text-align: center;
-    font-size: 30px;
+/* Estilos para pantallas más pequeñas, como celulares */
+@media screen and (max-width: 767px) {
+    
+    h2 {
+        margin-top: 100px;
+        text-align: center;
+        font-size: 15px;
+        width: 300px;
+        margin: auto; /* Centra horizontalmente */
+    }
+
+    p {
+        text-align: center;
+        font-size: 10px;
+        width: 300px;
+        margin: auto; /* Centra horizontalmente */
+    }
+
+    .descripcionEquipoSistema,
+    .historia,
+    .mision,
+    .vision,
+    .valores,
+    .equipo {
+        background-color: lightgrey;
+        padding: 20px; /* Añade un poco de espacio alrededor del contenido */
+        border-radius: 25px;
+        /*max-width: 320px;  /* Elimina este ancho fijo */
+        margin: auto; /* Esto centrará horizontalmente el div */
+        margin-top: 40px;
+        margin-bottom: 40px;
+        width:  360px;
+    }
+    
+
+
 }
 
-p {
-    margin-top: 10PX;
-    text-align: center;
-    font-size: 25px;
+
+/* Estilos para tabletas -----------------------*/
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    
+    h2 {
+        margin-top: 100px;
+        text-align: center;
+        font-size: 20px;
+        width: 300px;
+        margin: auto; /* Centra horizontalmente */
+    }
+
+    p {
+        text-align: center;
+        font-size: 15px;
+        width: 400px;
+        margin: auto; /* Centra horizontalmente */
+    }
+
+    .descripcionEquipoSistema,
+    .historia,
+    .mision,
+    .vision,
+    .valores,
+    .equipo {
+        background-color: lightgrey;
+        padding: 20px; /* Añade un poco de espacio alrededor del contenido */
+        border-radius: 25px;
+        /*max-width: 320px;  /* Elimina este ancho fijo */
+        margin: auto; /* Esto centrará horizontalmente el div */
+        margin-top: 40px;
+        margin-bottom: 40px;
+        width:  500px;
+    }
 }
 
-.descripcionEquipoSistema {
-    background-color: lightgrey;
-    padding: 20px; /* Añade un poco de espacio alrededor del contenido */
-    margin-left: 700px;
-    margin-right: 700px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border-radius: 25px;
-}
 
-.historia {
-    background-color: lightgrey;
-    padding: 20px; /* Añade un poco de espacio alrededor del contenido */
-    margin-left: 700px;
-    margin-right: 700px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border-radius: 25px;
-}
+/* Estilos para pantallas de escritorio -----------*/
+@media screen and (min-width: 1024px) {
 
-.mision {
-    background-color: lightgrey;
-    padding: 20px; /* Añade un poco de espacio alrededor del contenido */
-    margin-left: 700px;
-    margin-right: 700px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border-radius: 25px;
-}
+    h2 {
+        margin-top: 100px;
+        text-align: center;
+        font-size: 40px;
+        margin-bottom: 50px;
+    }
 
-.vision {
-    background-color: lightgrey;
-    padding: 20px; /* Añade un poco de espacio alrededor del contenido */
-    margin-left: 700px;
-    margin-right: 700px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border-radius: 25px;
-}
+    p {
+        margin-top: 10PX;
+        text-align: center;
+        font-size: 25px;
+        width: 700px;
+        margin: auto; /* Centra horizontalmente */
+    }
 
-.valores {
-    background-color: lightgrey;
-    padding: 20px; /* Añade un poco de espacio alrededor del contenido */
-    margin-left: 700px;
-    margin-right: 700px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border-radius: 25px;
-}
-.equipo {
-    background-color: lightgrey;
-    padding: 20px; /* Añade un poco de espacio alrededor del contenido */
-    margin-left: 700px;
-    margin-right: 700px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border-radius: 25px;
+
+    .descripcionEquipoSistema,
+    .historia,
+    .mision,
+    .vision,
+    .valores,
+    .equipo {
+        background-color: lightgrey;
+        padding: 20px; /* Añade un poco de espacio alrededor del contenido */
+        border-radius: 25px;
+        /*max-width: 320px;  /* Elimina este ancho fijo */
+        margin: auto; /* Esto centrará horizontalmente el div */
+        margin-top: 40px;
+        margin-bottom: 40px;
+        width:  800px;
+        height: 650px;
+    }
+
 }
