@@ -1,18 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Helvetica+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
-* {
+/* Estilos para pantallas más pequeñas, como celulares */
+@media screen and (max-width: 767px) {
+    *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
 }
 
-h1 {
+h1{
+
     text-align: center;
     background-color: rgb(0, 73, 83);
     color: white;
     padding: 20px;
     font-size: 2.5em;
+    
 }
 
 /* Estilos para el header */
@@ -25,12 +33,15 @@ header {
 /* Estilos para el título */
 header h1 {
     margin: 0; /* Eliminar margen del título */
-    font-size: 24px; /* Tamaño del texto del título */
+    font-size: 30px; /* Tamaño del texto del título */
 }
 
 /* Estilos para el menú de navegación */
 nav {
     margin-top: 10px; /* Espaciado superior del menú */
+    font-size: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 nav ul {
@@ -59,39 +70,20 @@ nav a:hover {
 
 body {
     text-align: center;
+    font-size: 10px;
+    margin: auto 0;
 }
 
-/* Estilos para el contenido principal */
-.contenido {
-    padding: 20px; /* Espaciado interno del contenido */
-}
-
-/* Estilos para el carrusel de imágenes */
-.carrusel-slide {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-}
-
-.carrusel-slide img {
-    scroll-snap-align: start;
-}
-
-/* Estilos para la descripción */
-.descripcion {
-    margin-top: 20px; /* Espaciado superior de la descripción */
-    text-align: justify; /* Justificar el texto */
-}
-
-/* Estilos para el pie de página */
 footer {
-    position: fixed;
+
+    position: relative;
     bottom: 0;
     width: 100%;
     background-color: #333;
     color: #fff;
     text-align: center;
     padding: 20px 0;
+    text-align: center;
 }
 
 footer p {
@@ -99,11 +91,210 @@ footer p {
 }
 
 footer a {
+
     color: #fff;
     text-decoration: none;
     transition: color 0.3s ease;
+
 }
 
 footer a:hover {
     color: #f2f2f2;
+}
+}
+
+
+
+
+/* Estilos para tabletas -----------------------*/
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: 'Roboto', sans-serif;
+        overflow-x: hidden; 
+    }
+    
+    h1{
+    
+        text-align: center;
+        background-color: rgb(0, 73, 83);
+        color: white;
+        padding: 20px;
+        font-size: 2.5em;
+        
+    }
+    
+    /* Estilos para el header */
+    header {
+        background-color: #f8f9fa; /* Color de fondo del header */
+        padding: 20px 0; /* Espaciado interno del header */
+        text-align: center;
+    }
+    
+    /* Estilos para el título */
+    header h1 {
+        margin: 0; /* Eliminar margen del título */
+        font-size: 24px; /* Tamaño del texto del título */
+    }
+    
+    /* Estilos para el menú de navegación */
+    nav {
+        margin-top: 10px; /* Espaciado superior del menú */
+    }
+    
+    nav ul {
+        list-style-type: none; /* Eliminar viñetas de la lista */
+        padding: 0; /* Eliminar espaciado interno de la lista */
+        margin: 0; /* Eliminar margen de la lista */
+    }
+    
+    nav li {
+        display: inline; /* Mostrar elementos de la lista en línea */
+        margin-right: 30px; /* Espaciado entre elementos del menú */
+    }
+    
+    nav a {
+        text-decoration: none; /* Eliminar subrayado de los enlaces */
+        color: #333; /* Color del texto de los enlaces */
+    }
+    
+    /* Estilos para el color al pasar el mouse sobre los enlaces */
+    nav a:hover {
+        color: white; /* Cambiar color al pasar el mouse */
+        background-color: gray;
+        border-radius: 20%;
+        padding: 2px 2px; /* Espaciado interno del header */
+    }
+    
+    body {
+        text-align: center;
+    }
+    
+    footer {
+    
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 20px 0;
+        text-align: center;
+    }
+    
+    footer p {
+        margin-bottom: 10px;
+    }
+    
+    footer a {
+    
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    
+    }
+    
+    footer a:hover {
+        color: #f2f2f2;
+    }
+}
+
+
+
+
+/* Estilos para pantallas de escritorio -----------*/
+@media screen and (min-width: 1024px) {
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: 'Roboto', sans-serif;
+        overflow-x: hidden; 
+    }
+    
+    h1{
+    
+        text-align: center;
+        background-color: rgb(0, 73, 83);
+        color: white;
+        padding: 20px;
+        font-size: 2.5em;
+        
+    }
+    
+    /* Estilos para el header */
+    header {
+        background-color: #f8f9fa; /* Color de fondo del header */
+        padding: 20px 0; /* Espaciado interno del header */
+        text-align: center;
+    }
+    
+    /* Estilos para el título */
+    header h1 {
+        margin: 0; /* Eliminar margen del título */
+        font-size: 24px; /* Tamaño del texto del título */
+    }
+    
+    /* Estilos para el menú de navegación */
+    nav {
+        margin-top: 10px; /* Espaciado superior del menú */
+    }
+    
+    nav ul {
+        list-style-type: none; /* Eliminar viñetas de la lista */
+        padding: 0; /* Eliminar espaciado interno de la lista */
+        margin: 0; /* Eliminar margen de la lista */
+    }
+    
+    nav li {
+        display: inline; /* Mostrar elementos de la lista en línea */
+        margin-right: 10px; /* Espaciado entre elementos del menú */
+    }
+    
+    nav a {
+        text-decoration: none; /* Eliminar subrayado de los enlaces */
+        color: #333; /* Color del texto de los enlaces */
+    }
+    
+    /* Estilos para el color al pasar el mouse sobre los enlaces */
+    nav a:hover {
+        color: white; /* Cambiar color al pasar el mouse */
+        background-color: gray;
+        border-radius: 20%;
+        padding: 2px 2px; /* Espaciado interno del header */
+    }
+    
+    body {
+        text-align: center;
+    }
+    
+    footer {
+    
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 20px 0;
+        text-align: center;
+    }
+    
+    footer p {
+        margin-bottom: 10px;
+    }
+    
+    footer a {
+    
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    
+    }
+    
+    footer a:hover {
+        color: #f2f2f2;
+    }
 }
