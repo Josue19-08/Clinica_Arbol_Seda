@@ -1,60 +1,75 @@
-.contenido {
-    display: flex;
-    flex-direction: column;
-    height: 90vh;
-}
+/* Estilos para pantallas más pequeñas, como celulares */
+@media screen and (max-width: 767px) {}
 
-.articulos {
-    width: 100%;
-    height: 100%;
-    margin: 50px;
-    display: flex;
-    flex-wrap: wrap; /* Hacer que los elementos se envuelvan */
-    justify-content: center;
-}
 
-/* Establecer las propiedades para los elementos de las preguntas */
-.pregunta {
-    width: calc(40% - 20px); /* Calcula el ancho de cada pregunta */
-    margin: 10px; /* Margen entre los elementos */
-    height: calc(40% - 20px); /* Calcula el 50% de la altura menos el margen */
-    background-color: gray;
-    border-radius: 20px;
-    margin: 30px;
-    text-align: center;
-}
+/* Estilos para tabletas -----------------------*/
+@media screen and (min-width: 768px) and (max-width: 1023px) {}
 
-.pregunta p {
-    margin: 20px;
-    margin-top: 60px;
-    text-align: center;
-}
+/* Estilos para pantallas de escritorio -----------*/
+@media screen and (min-width: 1024px) {
+    .contenido {
+        display: flex;
+        flex-direction: column;
+        height: 90vh;
+    }
 
-.pregunta:hover {
-    transition: ease-out 1.0s;
-    box-shadow: inset 0 1000px 0 0 #D80286;
-}
+    .articulos {
+        width: 100%;
+        height: 100%;
+        margin: 50px;
+        display: flex;
+        flex-wrap: wrap;
+        /* Hacer que los elementos se envuelvan */
+        justify-content: center;
+    }
 
-.pregunta:hover h2{
-    margin: 30px;
-    margin-top: 20px;
-    transition: ease-out 0.5s;
-}
+    /* Establecer las propiedades para los elementos de las preguntas */
+    .pregunta {
+        width: calc(40% - 20px);
+        /* Calcula el ancho de cada pregunta */
+        margin: 10px;
+        /* Margen entre los elementos */
+        height: calc(40% - 20px);
+        /* Calcula el 50% de la altura menos el margen */
+        background-color: gray;
+        border-radius: 20px;
+        margin: 30px;
+        text-align: center;
+    }
 
-.pregunta:hover .respuesta {
-    display: block;
-}
+    .pregunta p {
+        margin: 20px;
+        margin-top: 60px;
+        text-align: center;
+    }
 
-.respuesta {
-    display: none; /* Oculta la respuesta por defecto */
-    padding: 10px;
-    text-align: cente;
-    width: calc(100% - 50px);
-    height: 40%;
-    text-align: center;
-}
+    .pregunta:hover {
+        transition: ease-out 1.0s;
+        box-shadow: inset 0 1000px 0 0 #D80286;
+    }
 
-h2 {
-    margin: 30px;
-    margin-top: 100px;
+    .pregunta:hover h2 {
+        margin: 30px;
+        margin-top: 20px;
+        transition: ease-out 0.5s;
+    }
+
+    .pregunta:hover .respuesta {
+        display: block;
+    }
+
+    .respuesta {
+        display: none;
+        /* Oculta la respuesta por defecto */
+        padding: 10px;
+        text-align: cente;
+        width: calc(100% - 50px);
+        height: 40%;
+        text-align: center;
+    }
+
+    h2 {
+        margin: 30px;
+        margin-top: 100px;
+    }
 }
