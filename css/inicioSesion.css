@@ -1,5 +1,4 @@
 
-
 /* Estilos para pantallas más pequeñas, como celulares */
 @media screen and (max-width: 767px) {
     h2 {
@@ -122,6 +121,7 @@
 
 /* Estilos para pantallas de escritorio -----------*/
 @media screen and (min-width: 1024px) {
+   
     h2 {
         color: rgb(0, 73, 83);
         text-align: center;

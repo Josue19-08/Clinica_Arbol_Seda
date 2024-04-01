@@ -30,6 +30,8 @@
         margin: 0;
         max-width: 32%;
         height: auto;
+        box-shadow: 0 6px 6px rgb(75, 74, 74);
+        border-radius: 10px;
     }
 
     .slide {
@@ -91,6 +93,8 @@
         margin: 0;
         max-width: 30%;
         height: auto;
+        box-shadow: 0 6px 6px rgb(75, 74, 74);
+        border-radius: 10px;
     }
 
     .slide {
@@ -118,6 +122,11 @@
 }
 
 @media screen and (min-width: 1024px) {
+
+    header img {
+        width: 50%;
+        height: auto 0;
+    }
 
     .contenido {
         display: flex;
@@ -151,6 +160,8 @@
     .carousel-inner img {
         margin-right: 100px;
         max-width: 33%;
+        box-shadow: 0 6px 6px rgb(75, 74, 74);
+        border-radius: 10px;
     }
 
     .slide {
