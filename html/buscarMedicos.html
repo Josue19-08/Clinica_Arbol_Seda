@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica Árbol de Seda</title>
+    <link rel="stylesheet" type="text/css" href="../css/estilo.css">
+    <link rel="stylesheet" type="text/css" href="../css/buscarMedicos.css">
+</head>
+<body>
+    <header>
+        <img src="../img/logoNombreSinFondo.png" alt="Imagen Inicial">
+        <nav>
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="inicioSesion.html">Registro/Inicio Sesión</a></li>
+            <li><a href="index.html">Agendar Cita</a></li>
+            <li><a href="buscarMedicos.html">Buscar Médico</a></li>
+            <li><a href="sobreNosotros.html">Sobre Nosotros</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="informacionContacto.html">Información Contacto</a></li>
+            <li><a href="preguntasFrecuentes.html">Preguntas Frecuentes(FAQ)</a></li>
+            <li><a href="politicas.html">Política de privacidad y términos de uso</a></li>
+        </nav>
+    </header>
+
+    <main>
+       
+        <div class="contenido">
+            
+            
+            <table id="medicosTable">
+                <thead>
+                    <tr>
+                        <th class="id">Identificación</th>
+                        <th class="nombre">Nombre</th>
+                        <th class="especialidad">Especialidad</th>
+                        <th class="ubicacion">Ubicación</th>
+                    </tr>
+                </thead>
+                
+                <tbody id="medicosBody">
+                    <!-- Aquí se llenarán dinámicamente los datos de los médicos -->
+                </tbody>
+            </table>
+        </div>
+        <div id="pagination"></div>
+        <footer>
+            <p>Síguenos en redes sociales</p>
+            <div>
+                <a href="https://www.facebook.com/clinicabiblica/?locale=es_LA">Facebook</a>
+            </div>
+            <p>Derechos de autor 2024</p>
+        </footer>
+    </main>
+
+    <script src="../js/medicos.js" defer></script>
+    <script src="../js/buscarMedicos.js" defer></script>
+    <script src="../js/pagination.js" defer></script>
+</body>
+</html>

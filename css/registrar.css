@@ -1,8 +1,39 @@
+/*Colores*/
+
+h2 {
+    color: #445016;
+}
+
+
+.formulario {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 1);
+    background-color: #e3f1cf;
+}
+
+.formulario input[id="usuario"] {
+    border: 1px solid #f2f2f2;
+}
+
+.formulario input[type="submit"] {
+    background-color: #445016;
+    color: #fff;
+}
+
+.formulario input[type="submit"]:hover {
+    background-color: #64771a;
+}
+
+.inicioSesion a {
+    color: #445016;
+}
+
+.inicioSesion a:hover {
+    color: white;
+}
 
 /* Estilos para pantallas más pequeñas, como celulares */
 @media screen and (max-width: 767px) {
     h2 {
-        color: rgb(0, 73, 83);
         text-align: center;
     }
 
@@ -15,11 +46,8 @@
         width: 300px;
         margin: 0 auto;
         border-radius: 20px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 1);
         padding: 20px;
         margin-top: 70px;
-        background-color: lightgray;
-
     }
 
     .formulario input[id="usuario"] {
@@ -27,34 +55,23 @@
         width: 100%;
         padding: 10px;
         margin: 8px 0;
-        border: 1px solid #f2f2f2;
         border-radius: 4px;
         box-sizing: border-box;
 
     }
 
     .formulario input[type="submit"] {
-
-        background-color: rgb(0, 73, 83);
-        color: white;
         padding: 10px 20px;
         border: none;
         border-radius: 4px;
         cursor: pointer;
-
     }
 
-    .formulario input[type="submit"]:hover {
-
-        background-color: green;
-
-    }
 }
 
 /* Estilos para tabletas -----------------------*/
 @media screen and (min-width: 768px) and (max-width: 1023px) {
     h2 {
-        color: rgb(0, 73, 83);
         text-align: center;
     }
 
@@ -63,50 +80,33 @@
     }
 
     .formulario {
-
         width: 400px;
         margin: 0 auto;
         border-radius: 20px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 1);
         padding: 20px;
         margin-top: 100px;
-        background-color: lightgray;
-
     }
 
     .formulario input[id="usuario"] {
-
         width: 100%;
         padding: 10px;
         margin: 8px 0;
-        border: 1px solid #f2f2f2;
         border-radius: 4px;
         box-sizing: border-box;
-
     }
 
     .formulario input[type="submit"] {
-
-        background-color: rgb(0, 73, 83);
-        color: white;
         padding: 10px 20px;
         border: none;
         border-radius: 4px;
         cursor: pointer;
-
     }
 
-    .formulario input[type="submit"]:hover {
-
-        background-color: green;
-
-    }
 }
 
 /* Estilos para pantallas de escritorio -----------*/
 @media screen and (min-width: 1024px) {
     h2 {
-        color: rgb(0, 73, 83);
         text-align: center;
     }
 
@@ -115,43 +115,27 @@
     }
 
     .formulario {
-
         width: 400px;
         margin: 0 auto;
         border-radius: 20px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 1);
         padding: 20px;
         margin-top: 50px;
-        background-color: lightgray;
-
     }
 
     .formulario input[id="usuario"] {
-
         width: 100%;
         padding: 10px;
         margin: 8px 0;
-        border: 1px solid #f2f2f2;
         border-radius: 4px;
         box-sizing: border-box;
-
     }
 
     .formulario input[type="submit"] {
-
-        background-color: rgb(0, 73, 83);
-        color: white;
         padding: 10px 20px;
         border: none;
         border-radius: 4px;
         cursor: pointer;
-
-    }
-
-    .formulario input[type="submit"]:hover {
-
-        background-color: green;
-
+        margin-top: 10px;
     }
 
 }

@@ -1,0 +1,64 @@
+.contenido {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 50px; /* Reducir el margen exterior */
+}
+
+#medicosTable {
+    font-size: 12px;
+    margin-top: 25px;
+    margin: 10px; /* Establecer un margen interno */
+}
+
+#medicosTable th {
+    border: 1px solid #000;
+    padding: 10px;
+    background-color: #3e5028;
+    color: #fff;
+    max-width: 200px; /* Ancho máximo */
+}
+
+#medicosTable td {
+    border: 1px solid #000;
+    padding: 10px;
+    background-color: #729744;
+    color: #fff;
+    max-width: 200px; /* Ancho máximo */
+    max-height: 50px; /* Altura máxima ajustada */
+}
+
+.contenido input {
+    width: 300px;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 50px;
+}
+
+.ubicacion,
+.nombre {
+    width: 400px;
+}
+
+/* Estilos para la paginación */
+#pagination {
+    margin-top: 10px;
+}
+
+#pagination a {
+    display: inline-block;
+    padding: 5px 10px;
+    margin-right: 5px;
+    text-decoration: none;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+#pagination a.active {
+    background-color: #007bff;
+    color: #fff;
+}

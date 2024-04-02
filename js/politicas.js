@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
         var enlace = document.createElement('a');
         enlace.href = '../pdf/PoliticasPrivacidad.pdf';
         // Especificar que el enlace sea descargado al hacer clic
-        enlace.setAttribute('download', 'PoliticasPrivacidad.pdf');
+        enlace.setAttribute('download', '../pdf/PoliticasPrivacidad.pdf');
         // Hacer clic en el enlace temporal
         enlace.click();
     });

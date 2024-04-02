@@ -1,19 +1,34 @@
-/* Estilos para pantallas más pequeñas, como celulares */
-@media screen and (max-width: 767px) {
-    
-    h2 {
-        margin-top: 100px;
-        text-align: center;
-        font-size: 15px;
-        width: 300px;
-        margin: auto; /* Centra horizontalmente */
-    }
 
-    p {
-        text-align: center;
-        font-size: 10px;
-        width: 280px;
-        margin: auto; /* Centra horizontalmente */
+/*Colores*/
+
+h2 {
+
+}
+
+p {
+
+}
+
+
+.descripcionEquipoSistema,
+.historia,
+.mision,
+.vision,
+.valores,
+.equipo {
+    background-color: lightgrey;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 1);
+    border-radius: 15px;
+}
+
+/* Estilos para pantallas más pequeñas, como celulares */
+/* Estilos para pantallas de dispositivos móviles */
+@media screen and (max-width: 767px) {
+    .articulos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
     }
 
     .descripcionEquipoSistema,
@@ -22,19 +37,11 @@
     .vision,
     .valores,
     .equipo {
-        background-color: lightgrey;
-        padding: 20px; /* Añade un poco de espacio alrededor del contenido */
-        border-radius: 25px;
-        /*max-width: 320px;  /* Elimina este ancho fijo */
-        margin: auto; /* Esto centrará horizontalmente el div */
-        margin-top: 40px;
-        margin-bottom: 40px;
-        width:  310px;
+        width: calc(50% - 20px); /* Calculamos el ancho para que haya dos elementos por fila */
+        margin: 10px; /* Espacio entre los elementos */
     }
-    
-
-
 }
+
 
 
 /* Estilos para tabletas -----------------------*/
@@ -61,10 +68,7 @@
     .vision,
     .valores,
     .equipo {
-        background-color: lightgrey;
         padding: 20px; /* Añade un poco de espacio alrededor del contenido */
-        border-radius: 25px;
-        /*max-width: 320px;  /* Elimina este ancho fijo */
         margin: auto; /* Esto centrará horizontalmente el div */
         margin-top: 40px;
         margin-bottom: 40px;
@@ -73,24 +77,17 @@
 }
 
 
-/* Estilos para pantallas de escritorio -----------*/
+/* Estilos para pantallas de escritorio */
 @media screen and (min-width: 1024px) {
-
-    h2 {
-        margin-top: 100px;
-        text-align: center;
-        font-size: 40px;
-        margin-bottom: 50px;
+    .articulos {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-gap: 20px;
+        justify-content: center;
+        align-content: center;
+        padding: 100px;
+        margin: auto;
     }
-
-    p {
-        margin-top: 10PX;
-        text-align: center;
-        font-size: 25px;
-        width: 700px;
-        margin: auto; /* Centra horizontalmente */
-    }
-
 
     .descripcionEquipoSistema,
     .historia,
@@ -98,15 +95,41 @@
     .vision,
     .valores,
     .equipo {
-        background-color: lightgrey;
-        padding: 20px; /* Añade un poco de espacio alrededor del contenido */
-        border-radius: 25px;
-        /*max-width: 320px;  /* Elimina este ancho fijo */
-        margin: auto; /* Esto centrará horizontalmente el div */
-        margin-top: 40px;
-        margin-bottom: 40px;
-        width:  800px;
-        height: 650px;
+        background-color: #f0f0f0;
+        padding: 20px;
+        border: 2px solid #ccc;
+        justify-content: center;
     }
 
+    /* Estilos para la posición de los cuadros */
+    .descripcionEquipoSistema:nth-child(2) {
+        grid-column: 1;
+        grid-row: 1 ;
+    }
+
+    .mision {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .vision {
+        grid-column: 3;
+        grid-row: 1;
+    }
+
+    .historia {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    .valores {
+        grid-column: 4;
+        grid-row: 2;
+    }
+
+    .equipo {
+        grid-column: 3;
+        grid-row: 3;
+    }
 }
+
