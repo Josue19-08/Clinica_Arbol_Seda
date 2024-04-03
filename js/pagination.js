@@ -1,44 +1,54 @@
 document.addEventListener("DOMContentLoaded", function() {
-    var table = document.getElementById('medicosTable');
-    var tbody = table.getElementsByTagName('tbody')[0];
-    var rowsPerPage = 5; // Número de filas por página
-    var currentPage = 1;
+    var tabla = document.getElementById('medicosTable');
+    var cuerpoTabla = tabla.getElementsByTagName('tbody')[0];
+    var filasPorPagina = 10; // Número de filas por página
+    var paginaActual = 1;
 
-    function showPage(page) {
-        var startIndex = (page - 1) * rowsPerPage;
-        var endIndex = startIndex + rowsPerPage;
-        var rows = tbody.rows;
+    function mostrarPagina(pagina) {
+        var indiceInicio = (pagina - 1) * filasPorPagina;
+        var indiceFin = indiceInicio + filasPorPagina;
+        var filas = cuerpoTabla.rows;
 
-        for (var i = 0; i < rows.length; i++) {
-            rows[i].style.display = (i >= startIndex && i < endIndex) ? '' : 'none';
+        for (var i = 0; i < filas.length; i++) {
+            filas[i].style.display = (i >= indiceInicio && i < indiceFin) ? '' : 'none';
         }
     }
 
-    function updatePagination() {
-        var totalPages = Math.ceil(tbody.rows.length / rowsPerPage);
-        var pagination = document.getElementById('pagination');
-        pagination.innerHTML = '';
+    function actualizarPaginacion() {
+        var totalPaginas = Math.ceil(cuerpoTabla.rows.length / filasPorPagina);
+        var paginacion = document.getElementById('pagination');
+        paginacion.innerHTML = '';
 
-        for (var i = 1; i <= totalPages; i++) {
-            var link = document.createElement('a');
-            link.href = '#';
-            link.textContent = i;
+        for (var i = 1; i <= totalPaginas; i++) {
+            var enlace = document.createElement('a');
+            enlace.href = '#';
+            enlace.textContent = i;
 
-            if (i === currentPage) {
-                link.className = 'active';
+            if (i === paginaActual) {
+                enlace.className = 'active';
             }
 
-            link.addEventListener('click', function(e) {
+            enlace.addEventListener('click', function(e) {
                 e.preventDefault();
-                currentPage = parseInt(this.textContent);
-                showPage(currentPage);
-                updatePagination();
+                paginaActual = parseInt(this.textContent);
+                mostrarPagina(paginaActual);
+                actualizarPaginacion();
             });
 
-            pagination.appendChild(link);
+            paginacion.appendChild(enlace);
         }
     }
 
-    showPage(currentPage);
-    updatePagination();
+    mostrarPagina(paginaActual);
+    actualizarPaginacion();
+
+    var inputFilasPorPagina = document.getElementById('rowsPerPageInput');
+
+    inputFilasPorPagina.addEventListener('input', function() {
+        paginaActual = 1;
+        filasPorPagina = parseInt(this.value);
+
+        mostrarPagina(paginaActual);
+        actualizarPaginacion();
+    });
 });

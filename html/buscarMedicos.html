@@ -24,7 +24,11 @@
     </header>
 
     <main>
-       
+        <div class="buscar">
+            <label class="searchLabel">Buscar doctor</label>
+            <input type="text" id="searchInput">
+        </div>
+        
         <div class="contenido">
             
             
@@ -42,6 +46,9 @@
                     <!-- Aquí se llenarán dinámicamente los datos de los médicos -->
                 </tbody>
             </table>
+        </div>
+        <div class="columnas"><label for="rowsPerPageInput">Filas por página:  </label>
+            <input type="number" id="rowsPerPageInput" value="4">
         </div>
         <div id="pagination"></div>
         <footer>
