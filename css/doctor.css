@@ -75,6 +75,7 @@
 .biografia {
     border-bottom-right-radius: 20px;
     border-bottom-left-radius: 20px;
+    align-content: center;
 }
 
 .foto img {
