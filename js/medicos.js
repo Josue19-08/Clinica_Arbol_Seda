@@ -289,22 +289,6 @@ const medicos = [
         biografia: "El Dr. Fernando Méndez es un cirujano general con experiencia en una amplia gama de procedimientos quirúrgicos. Ofrece atención de alta calidad y resultados exitosos para mejorar la salud de sus pacientes."
       },
       {
-        id: "7890-1234-2678",
-        nombre: "Fernando Méndez Castro",
-        especialidad: "Cirugía General",
-        ubicacion: "Calle 3, Alajuela, Hospital Cirugía Avanzada",
-        horarios: "Lunes a Viernes: 8am - 4pm",
-        contacto: {
-          telefono: "+506 7777-8765",
-          email: "fernandomendez@gmail.com"
-        },
-        resenas: [
-          { usuario: "Paciente31", calificacion: 5, comentario: "Excelente cirujano, me realizó una operación exitosa.<br>" },
-          { usuario: "Paciente32", calificacion: 4, comentario: "Buena atención pre y post operatoria, me hizo sentir en buenas manos." }
-        ],
-        biografia: "El Dr. Fernando Méndez es un cirujano general con experiencia en una amplia gama de procedimientos quirúrgicos. Ofrece atención de alta calidad y resultados exitosos para mejorar la salud de sus pacientes."
-      },
-      {
         id: "1234-5678-9012",
         nombre: "Laura Salazar Ramírez",
         especialidad: "Neurología",

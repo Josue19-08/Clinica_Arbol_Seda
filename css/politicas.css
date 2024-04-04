@@ -1,3 +1,11 @@
+
+body {
+    background-image: url('../img/inicio_registro.png');
+    background-size: cover; /* Para que la imagen cubra todo el fondo */
+    background-repeat: no-repeat; /* Para que la imagen no se repita */
+    /* Otros estilos si los necesitas */
+}
+
 /* Estilos para pantallas más pequeñas, como celulares */
 @media screen and (max-width: 767px) {}
 
@@ -6,24 +14,20 @@
 @media screen and (min-width: 768px) and (max-width: 1023px) {}
 
 /* Estilos para pantallas de escritorio -----------*/
+/* Estilos para pantallas de escritorio */
 @media screen and (min-width: 1024px) {
     .contenido {
-        height: 100%;
-        margin: 0;
+        width: 60%; /* Definir un ancho para el contenido */
+        margin: 0 auto; /* Esto centrará horizontalmente el contenido */
         padding: 50px;
-        align-items: center;
-        background-color: green;
-    }
-
-    .articulos {
-        margin: auto 0;
+        justify-content: center; /* Centra horizontalmente el contenido */
     }
 
     .politicas {
-        width: 100%;
+        width: 100%; /* Utilizar el 100% del ancho del contenedor */
         height: 100%;
         border-radius: 20px;
-        background-color: rgb(126, 168, 113);
+        background-color: rgba(126, 168, 113, 0.5); /* 50% de transparencia */
     }
 
     .politicas h2 {
@@ -31,14 +35,10 @@
     }
 
     .politicas p {
-        margin-right: 400px;
-        margin-left: 400px;
-        margin-top: 50px;
-        margin-bottom: 50px;
+        padding: 60px;
     }
 
     .contenido input[type="submit"] {
-
         background-color: rgb(0, 73, 83);
         color: white;
         padding: 10px 20px;
@@ -49,9 +49,6 @@
     }
 
     .contenido input[type="submit"]:hover {
-
         background-color: rgb(0, 178, 178);
-
     }
-
 }

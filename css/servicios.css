@@ -7,23 +7,23 @@
 
 /* Estilos para pantallas de escritorio -----------*/
 @media screen and (min-width: 1024px) {
-    body {
-        margin: 0;
-    }
 
     .contenido {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         height: 100vh;
+        margin: 10px;
         /* 100% del viewport height */
     }
 
     .articulos {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         /* Los elementos dentro de .articulos se alinearán verticalmente */
         flex: 1;
         /* El div .articulos ocupará todo el espacio restante vertical */
+        padding-left: 20px;
+        padding-right: 20px;
     }
 
     /* Los divs dentro de .articulos ocuparán el ancho completo */
@@ -31,15 +31,16 @@
     .tiposCitas,
     .serviciosCitas {
         width: 100%;
-        height: 33.33%;
-        /* Cada div ocupará 1/3 de la altura de la pantalla */
-        margin-top: 10px;
+        height: 100vh;
+        padding: 50px;
     }
 
 
     /* Añade colores de fondo para visualización */
     .disponibilidad {
         background-color: red;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
     }
 
     .tiposCitas {
@@ -48,5 +49,8 @@
 
     .serviciosCitas {
         background-color: blue;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        
     }
 }

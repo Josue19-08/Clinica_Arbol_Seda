@@ -1,4 +1,12 @@
+
 /*Colores de la página*/
+
+body {
+    background-image: url('../img/inicio_registro.png');
+    background-size: cover; /* Para que la imagen cubra todo el fondo */
+    background-repeat: no-repeat; /* Para que la imagen no se repita */
+    /* Otros estilos si los necesitas */
+}
 
 h2 {
     color: #445016;

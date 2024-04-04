@@ -15,11 +15,11 @@ document.addEventListener("DOMContentLoaded", function () {
         // Iterar sobre la lista de médicos y agregar cada uno a la tabla
         for (const medico of medicos) {
             const row = `
-                <tr>
-                    <td>${medico.id}</td>
-                    <td>${medico.nombre}</td>
-                    <td>${medico.especialidad}</td>
-                    <td>${medico.ubicacion}</td>
+                <tr data-id="${medico.id}">
+                    <td class="id">${medico.id}</td>
+                    <td class="nombre">${medico.nombre}</td>
+                    <td class="especialidad">${medico.especialidad}</td>
+                    <td class="ubicacion">${medico.ubicacion}</td>
                 </tr>`;
             medicosTableBody.innerHTML += row;
         }
@@ -59,17 +59,39 @@ document.addEventListener("DOMContentLoaded", function () {
         );
         // Mostrar los médicos filtrados en la tabla
         displayMedicos(medicosFiltrados);
+    }
+
+    // Función para abrir la página web del médico al hacer clic en una fila de la tabla
+    function abrirPaginaWebMedico(idMedico) {
+        // Aquí debes definir la lógica para redirigir a la página web del médico con el ID proporcionado
+        // Por ejemplo:
+        window.location.href = `../html/doctor.html?id=${idMedico}`;
+
+    }
+
+    // Llamar a la función para mostrar los médicos cuando se cargue la página
+    displayMedicos(medicos);
+
+    idHeader.addEventListener('click', ordenarPorId);
+    nombreHeader.addEventListener('click', ordenarPorNombre);
+    especialidadHeader.addEventListener('click', ordenarPorEspecialidad);
+    ubicacionHeader.addEventListener('click', ordenarPorUbicacion);
+    searchInput.addEventListener('input', filtrarTabla);
+
+    // Agregar un evento de clic a las filas de la tabla para abrir la página web del médico
+    medicosTableBody.addEventListener('click', function (event) {
+        const fila = event.target.closest('tr');
+        if (fila) {
+            const idMedico = fila.getAttribute('data-id');
+            abrirPaginaWebMedico(idMedico);
         }
-        // Llamar a la función para mostrar los médicos cuando se cargue la página
-        displayMedicos(medicos);
-
-        idHeader.addEventListener('click', ordenarPorId);
-        nombreHeader.addEventListener('click', ordenarPorNombre);
-        especialidadHeader.addEventListener('click', ordenarPorEspecialidad);
-        ubicacionHeader.addEventListener('click', ordenarPorUbicacion);
-        searchInput.addEventListener('input', filtrarTabla);
-
     });
+});
+
+
+
+
+
 
 /*
 document.addEventListener("DOMContentLoaded", function() {

@@ -1,14 +1,8 @@
-
 /*Colores*/
 
-h2 {
-
+.articulos {
+    background-color: #f0f0f0;
 }
-
-p {
-
-}
-
 
 .descripcionEquipoSistema,
 .historia,
@@ -16,9 +10,37 @@ p {
 .vision,
 .valores,
 .equipo {
-    background-color: lightgrey;
+    background-color: #d6f0b8;
+}
+
+
+
+.desarrolladoresIMG img,
+.historiaIMG img,
+.misionIMG img,
+.visionIMG img,
+.valoresIMG img,
+.equipoIMG img {
+    border-radius: 15px;
+    width: 100%;
+    height: auto 0;
+}
+
+.descripcionEquipoSistema,
+.historia,
+.mision,
+.vision,
+.valores,
+.equipo,
+.desarrolladoresIMG,
+.historiaIMG,
+.misionIMG,
+.visionIMG,
+.valoresIMG,
+.equipoIMG {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 1);
     border-radius: 15px;
+    align-content: center;
 }
 
 /* Estilos para pantallas más pequeñas, como celulares */
@@ -37,8 +59,11 @@ p {
     .vision,
     .valores,
     .equipo {
-        width: calc(50% - 20px); /* Calculamos el ancho para que haya dos elementos por fila */
-        margin: 10px; /* Espacio entre los elementos */
+        width: calc(50% - 20px);
+        /* Calculamos el ancho para que haya dos elementos por fila */
+        margin: 10px;
+        /* Espacio entre los elementos */
+
     }
 }
 
@@ -46,20 +71,22 @@ p {
 
 /* Estilos para tabletas -----------------------*/
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-    
+
     h2 {
         margin-top: 100px;
         text-align: center;
         font-size: 20px;
         width: 300px;
-        margin: auto; /* Centra horizontalmente */
+        margin: auto;
+        /* Centra horizontalmente */
     }
 
     p {
         text-align: center;
         font-size: 15px;
         width: 400px;
-        margin: auto; /* Centra horizontalmente */
+        margin: auto;
+        /* Centra horizontalmente */
     }
 
     .descripcionEquipoSistema,
@@ -68,11 +95,13 @@ p {
     .vision,
     .valores,
     .equipo {
-        padding: 20px; /* Añade un poco de espacio alrededor del contenido */
-        margin: auto; /* Esto centrará horizontalmente el div */
+        padding: 20px;
+        /* Añade un poco de espacio alrededor del contenido */
+        margin: auto;
+        /* Esto centrará horizontalmente el div */
         margin-top: 40px;
         margin-bottom: 40px;
-        width:  500px;
+        width: 500px;
     }
 }
 
@@ -81,7 +110,7 @@ p {
 @media screen and (min-width: 1024px) {
     .articulos {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
         grid-gap: 20px;
         justify-content: center;
         align-content: center;
@@ -95,16 +124,19 @@ p {
     .vision,
     .valores,
     .equipo {
-        background-color: #f0f0f0;
         padding: 20px;
-        border: 2px solid #ccc;
         justify-content: center;
     }
 
     /* Estilos para la posición de los cuadros */
     .descripcionEquipoSistema:nth-child(2) {
         grid-column: 1;
-        grid-row: 1 ;
+        grid-row: 1;
+    }
+
+    .desarrolladoresIMG {
+        grid-column: 2;
+        grid-row: 1;
     }
 
     .mision {
@@ -112,14 +144,24 @@ p {
         grid-row: 2;
     }
 
+    .misionIMG {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .visionIMG {
+        grid-column: 4;
+        grid-row: 1;
+    }
+
     .vision {
         grid-column: 3;
         grid-row: 1;
     }
 
-    .historia {
-        grid-column: 1;
-        grid-row: 3;
+    .valoresIMG {
+        grid-column: 3;
+        grid-row: 2;
     }
 
     .valores {
@@ -127,9 +169,23 @@ p {
         grid-row: 2;
     }
 
+    .historiaIMG {
+        grid-column: 2;
+        grid-row: 3;
+    }
+
+    .historia {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
     .equipo {
         grid-column: 3;
         grid-row: 3;
     }
-}
 
+    .equipoIMG {
+        grid-column: 4;
+        grid-row: 3;
+    }
+}
