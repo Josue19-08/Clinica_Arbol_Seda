@@ -7,18 +7,22 @@
     <title>Clínica Árbol de Seda</title>
     <link rel="stylesheet" type="text/css" href="../css/estilo.css"> <!-- Ruta relativa al archivo CSS -->
     <link rel="stylesheet" type="text/css" href="../css/registrar.css">
-    <!--<script src="js/inicio.js"></script>-->
+    <script src="../js/registrar.js"></script>
+    <script src="../js/usuarioIniciado.js"></script>
+    
+    
 </head>
 
 <body>
 
     <header>
         <img src="../img/logoNombreSinFondo.png" alt="Imagen Inicial">
-
+        <br><div id="estadoSesion"></div>
+        <div id="cerrarSesion"><p>Salir</p></div>
         <nav>
             <li><a href="../index.html">Inicio</a></li>
             <li><a href="inicioSesion.html">Registro/Inicio Sesión</a></li>
-            <li><a href="index.html">Agendar Cita</a></li>
+            <li><a href="agendarCita.html">Agendar Cita</a></li>
             <li><a href="buscarMedicos.html">Buscar Médico</a></li>
             <li><a href="sobreNosotros.html">Sobre Nosotros</a></li>
             <li><a href="servicios.html">Servicios</a></li>
@@ -39,27 +43,32 @@
                 <form id="formulario" method="post">
                     <div class="usuarios">
                         <label>Usuario (Cédula):</label>
-                        <input id="usuario" type="number">
+                        <input id="cedula" class="form" type="text" placeholder="##-####-####" required>
                     </div>
                     <div class="usuarios">
                         <label>Nombre:</label>
-                        <input id="usuario" type="text">
+                        <input id="nombre" class="form" type="text" required>
                     </div>
                     <div class="usuarios">
                         <label>Apellidos:</label>
-                        <input id="usuario" type="text">
+                        <input id="apellidos" class="form" type="text" required>
                     </div>
                     <div class="usuarios">
                         <label>Número de celular:</label>
-                        <input id="usuario" type="number">
+                        <input id="celular" class="form" type="text" placeholder="####-####" required>
                     </div>
                     <div class="usuarios">
                         <label>Correo electrónico:</label>
-                        <input id="usuario" type="email">
+                        <input id="correo" class="form" type="email" required>
                     </div>
                     <div class="usuarios">
                         <label>Contraseña:</label>
-                        <input id="usuario" type="password">
+                        <input id="contrasenna" class="form" type="password" required>
+                    </div>
+
+                    <div class="usuarios">
+                        <label>Confirmar contraseña:</label>
+                        <input id="confiContrasenna" class="form" type="password" required>
                     </div>
                     
                     <input id="botonRegistrar" type="submit" value="Registrarse">

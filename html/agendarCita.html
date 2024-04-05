@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica Árbol de Seda</title>
+    <link rel="stylesheet" type="text/css" href="../css/estilo.css">
+    <link rel="stylesheet" type="text/css" href="../css/agendarCita.css">
+    
+</head>
+<body>
+    <header>
+        <img src="../img/logoNombreSinFondo.png" alt="Imagen Inicial">
+        <br><div id="estadoSesion"></div>
+        <div id="cerrarSesion"><p>Salir</p></div>
+        <nav>
+            <ul> <!-- Cambié <li> por <ul> -->
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="inicioSesion.html">Registro/Inicio Sesión</a></li>
+                <li><a href="agendarCita.html">Agendar Cita</a></li>
+                <li><a href="buscarMedicos.html">Buscar Médico</a></li>
+                <li><a href="sobreNosotros.html">Sobre Nosotros</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="informacionContacto.html">Información Contacto</a></li>
+                <li><a href="preguntasFrecuentes.html">Preguntas Frecuentes(FAQ)</a></li>
+                <li><a href="politicas.html">Política de privacidad y términos de uso</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="contenido">
+
+            <div class="navegacion">
+                <button id="mes-anterior">Anterior</button>
+                
+                <button id="mes-siguiente">Siguiente</button>
+            </div>
+
+            <div class="calendario" id="calendario">
+                <h2 id="titulo-mes"></h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Domingo</th>
+                            <th>Lunes</th>
+                            <th>Martes</th>
+                            <th>Miércoles</th>
+                            <th>Jueves</th>
+                            <th>Viernes</th>
+                            <th>Sábado</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cuerpo-calendario">
+                        <!-- Aquí se generará el cuerpo del calendario -->
+                    </tbody>
+                </table>
+
+                <div class="schedule">
+                    <h2>Hora:</h2>
+                    <label for="time"></label>
+                    <input type="time" id="time" name="time">
+                
+                    <h2>Seleccionar médico:</h2>
+                    <select id="medico">
+                        <option value="9-0999-0999">José Aguilar Brenes (Ortopedia)</option>
+                        <option value="2-0222-0222">María Gómez Sojo (Pediatría)</option>
+                        <option value="3-0333-0333">Lisandro Arguedas Masís (Medicina General)</option>
+                        <option value="1-0111-0111">Juan Pérez Aguilar (Cardiología)</option>
+                        <option value="5-0555-0555">Andrés Rojas Hernández (Oftalmología)</option>
+                        <option value="6-0666-0666">Laura Chacón Marín (Ginecología)</option>
+                        <option value="4-0444-0444">Sofía Mora Vargas (Dermatología)</option>
+                        <option value="7-0777-0777">Javier Morales Garbanzo (Pediatría)</option>
+                        <option value="8-0888-0888">Ana Navarro Solís (Neurología)</option>
+                        <option value="1-0101-0101">Claudia Solano Saenz (Oncología)</option>
+                        <option value="2-0202-0202">Carlos Vargas Badilla (Psiquiatría)</option>
+                        <option value="3-0303-0303">Marcela Gutiérrez Daniels (Endocrinología)</option>
+                        <option value="4-0404-0404">Alejandro Sánchez Romero (Urología)</option>
+                        <option value="8542-1231-8765">Pedro Mendoza Campos (Psicología)</option>
+                        <option value="2678-9876-5432">Carolina Gutiérrez López (Nutrición)</option>
+                        <option value="9785-5432-1234">Roberto Cruz Montero (Odontología)</option>
+                        <option value="4321-5678-9785">Verónica Solís Chaves (Dermatología)</option>
+                        <option value="7890-1234-2678">Fernando Méndez Castro (Cirugía General)</option>
+                        <option value="1234-5678-9012">Laura Salazar Ramírez (Neurología)</option>
+                        <option value="5678-9012-3456">Santiago Jiménez Solano (Ortopedia)</option>
+                        <option value="9012-3456-7890">Ana María Fernández Chacón (Ginecología)</option>
+                        <option value="3456-7890-1234">Martín Vargas Sánchez (Cardiología)</option>
+                        <option value="7890-1234-5678">María Rodríguez Gómez (Psiquiatría)</option>
+                        </select>
+                        
+                
+                        <button id="btn-programar-cita">Programar cita</button>
+                  </div>
+
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>Siguenos en redes sociales</p>
+        <div>
+            <a href="https://www.facebook.com/clinicabiblica/?locale=es_LA">Facebook</a>
+        </div>
+        <p>Derechos de autor 2024</p>
+    </footer>
+    <script src="../js/agendarCita.js"></script>
+    <script src="../js/usuarioIniciado.js"></script>
+</body>
+</html>

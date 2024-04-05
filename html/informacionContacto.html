@@ -6,18 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clínica Árbol de Seda</title>
     <link rel="stylesheet" type="text/css" href="../css/estilo.css">
-    <link rel="stylesheet" type="text/css" href="../css/servicios.css">
+    <link rel="stylesheet" type="text/css" href="../css/informacionContacto.css">
+    <script src="../js/usuarioIniciado.js"></script>
 </head>
 
 <body>
 
     <header>
         <img src="../img/logoNombreSinFondo.png" alt="Imagen Inicial">
-
+        <br><div id="estadoSesion"></div>
+        <div id="cerrarSesion"><p>Salir</p></div>
         <nav>
             <li><a href="../index.html">Inicio</a></li>
             <li><a href="inicioSesion.html">Registro/Inicio Sesión</a></li>
-            <li><a href="index.html">Agendar Cita</a></li>
+            <li><a href="agendarCita.html">Agendar Cita</a></li>
             <li><a href="buscarMedicos.html">Buscar Médico</a></li>
             <li><a href="sobreNosotros.html">Sobre Nosotros</a></li>
             <li><a href="servicios.html">Servicios</a></li>
@@ -32,19 +34,16 @@
         <div class="contenido">
             <div class="articulos">
 
-                <div class="contacto">
-
-                    
-
-                </div>
                 <div class="direccion">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6606.357309520832!2d-84.47881358984125!3d10.08568123155366!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa045f2c514f8d3%3A0xd9db90c5ed401137!2sCentro%20M%C3%A9dico%20los%20%C3%81ngeles!5e0!3m2!1ses-419!2scr!4v1711586973147!5m2!1ses-419!2scr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    <p>100 metros Sur del complejo Deportivo Rafael Rodríguez Alajuela San Ramón, 20201</p>
+                    <br><p>Dirección: <br> <br> 100 metros Sur del complejo Deportivo Rafael Rodríguez Alajuela San Ramón, 20201 <br>
+                        <br>Contacto: <br> <br> 2556-6363 <br> clinicaArbolSeda@gmail.com
+                    </p>
                 </div>
 
                 <div class="formulario">
 
-                    <h2>Información de Contacto</h2>
+                    <h2>Información de Contacto o comentario</h2>
                     <br>
     
                     <form id="formulario" method="post">
@@ -54,19 +53,19 @@
                         </div>
                         <div class="usuarios">
                             <label>Apellidos:</label>
-                            <input id="usuario" type="text">
+                            <input id="apellido" type="text">
                         </div>
                         <div class="usuarios">
                             <label>Teléfono</label>
-                            <input id="usuario" type="number">
+                            <input id="telefono" type="number">
                         </div>
                         <div class="usuarios">
                             <label>Correo electrónico:</label>
-                            <input id="usuario" type="email">
+                            <input id="correo" type="email">
                         </div>
                         <div class="usuarios">
-                            <label>Comentario:</label>
-                            <input id="usuario" type="text">
+                            <label for="comentario">Comentario:</label>
+                            <textarea id="comentario" rows="4"></textarea>
                         </div>
  
                         

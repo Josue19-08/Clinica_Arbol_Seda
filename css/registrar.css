@@ -16,7 +16,7 @@ h2 {
     background-color: #e3f1cf;
 }
 
-.formulario input[id="usuario"] {
+.formulario input[class="form"] {
     border: 1px solid #f2f2f2;
 }
 
@@ -56,7 +56,7 @@ h2 {
         margin-top: 70px;
     }
 
-    .formulario input[id="usuario"] {
+    .formulario input[class="form"] {
 
         width: 100%;
         padding: 10px;
@@ -93,7 +93,7 @@ h2 {
         margin-top: 100px;
     }
 
-    .formulario input[id="usuario"] {
+    .formulario input[class="form"] {
         width: 100%;
         padding: 10px;
         margin: 8px 0;
@@ -128,7 +128,7 @@ h2 {
         margin-top: 100px;
     }
 
-    .formulario input[id="usuario"] {
+    .formulario input[class="form"] {
         width: 100%;
         padding: 10px;
         margin: 8px 0;

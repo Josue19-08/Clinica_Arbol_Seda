@@ -7,19 +7,20 @@
     <title>Clínica Árbol de Seda</title>
     <link rel="stylesheet" type="text/css" href="../css/estilo.css"> <!-- Ruta relativa al archivo CSS -->
     <link rel="stylesheet" type="text/css" href="../css/inicioSesion.css">
-<!--    <script src="js/inicio.js"></script>-->
+    <script src="../js/inicioSesion.js"></script>
+    <script src="../js/usuarioIniciado.js"></script>
 </head>
 
 <body>
 
     <header>
         <img src="../img/logoNombreSinFondo.png" alt="Imagen Inicial">
-
-        <nav>
+        <br><div id="estadoSesion"></div>
+        <div id="cerrarSesion"><p>Salir</p></div>
             <nav>
                 <li><a href="../index.html">Inicio</a></li>
                 <li><a href="inicioSesion.html">Registro/Inicio Sesión</a></li>
-                <li><a href="index.html">Agendar Cita</a></li>
+                <li><a href="agendarCita.html">Agendar Cita</a></li>
                 <li><a href="buscarMedicos.html">Buscar Médico</a></li>
                 <li><a href="sobreNosotros.html">Sobre Nosotros</a></li>
                 <li><a href="servicios.html">Servicios</a></li>
@@ -27,7 +28,6 @@
                 <li><a href="preguntasFrecuentes.html">Preguntas Frecuentes(FAQ)</a></li>
                 <li><a href="politicas.html">Política de privacidad y términos de uso</a></li>
             </nav>
-        </nav>
     </header>
 
     <main>
@@ -41,11 +41,11 @@
                 <form id="formulario" method="post">
                     <div class="usuarios">
                         <label>Usuario (Cédula):</label>
-                        <input id="usuario" type="number">
+                        <input id="usuario" type="text" placeholder="##-####-####" required>
                     </div>
                     <div class="usuarios">
                         <label>Contraseña:</label>
-                        <input id="usuario" type="password">
+                        <input id="contrasenna" type="password" required>
                     </div>
 
                     <input id="botonIngresar" type="submit" value="Iniciar Sesión">
