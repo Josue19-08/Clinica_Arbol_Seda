@@ -169,10 +169,15 @@ document.addEventListener("DOMContentLoaded", function() {
             var opciones = medicoSelect.options;
             for (var i = 0; i < opciones.length; i++) {
                 if (opciones[i].text === nombreMedico) {
-                    return opciones[i].value.split('-')[0];
+                    return opciones[i].value.split('-'); // Retorna la cédula completa sin cortarla
                 }
             }
-            return '';
+            return ''; // Retorna una cadena vacía si no se encuentra el médico
+        }
+        
+        // Función para redirigir a la página de administrar citas
+        function administrarCita() {
+            window.location.href = '../html/administrarCitas.html';
         }
 
         // Event listeners para los botones de navegación
@@ -181,6 +186,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // Event listener para el botón de programar cita
         document.getElementById('btn-programar-cita').addEventListener('click', programarCita);
+
+        // Event listener para el botón de administrar cita
+        document.getElementById('btn-administrar-cita').addEventListener('click', administrarCita);
 
         // Generar calendario inicial
         var mesActual = new Date().getMonth() + 1;

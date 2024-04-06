@@ -24,9 +24,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // Validar los campos del formulario
         if (!validarCedula(cedula) || !validarNombre(nombre) || !validarApellidos(apellidos) || !validarCelular(celular) || !validarCorreo(correo) || !validarContrasenna(contrasenna, confirmarContrasenna)) {
-            alert('Por favor, complete correctamente todos los campos del formulario.');
+            alert('Por favor, complete correctamente todos los campos del formulario con su respectivo formato.');
             return;
         }
+
+        // Encriptar la contraseña
+        var contrasennaEncriptada = CryptoJS.SHA256(contrasenna).toString();
 
         // Crear objeto de usuario con el nuevo campo "inicio"
         var usuario = {
@@ -35,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
             apellidos: apellidos,
             celular: celular,
             correo: correo,
-            contrasenna: contrasenna,
+            contrasenna: contrasennaEncriptada, // Guardar la contraseña encriptada
             inicio: false // Nuevo campo para verificar inicio de sesión
         };
 

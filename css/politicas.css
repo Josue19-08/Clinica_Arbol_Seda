@@ -1,33 +1,102 @@
-
 body {
     background-image: url('../img/inicio_registro.png');
-    background-size: cover; /* Para que la imagen cubra todo el fondo */
-    background-repeat: no-repeat; /* Para que la imagen no se repita */
-    /* Otros estilos si los necesitas */
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
-/* Estilos para pantallas más pequeñas, como celulares */
-@media screen and (max-width: 767px) {}
+.contenido {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
 
+.politicas {
+    width: 100%;
+    border-radius: 20px;
+    background-color: rgba(126, 168, 113, 0.5);
+    padding: 20px;
+    text-align: center;
+}
 
-/* Estilos para tabletas -----------------------*/
-@media screen and (min-width: 768px) and (max-width: 1023px) {}
+.politicas h2 {
+    margin-top: 20px;
+}
 
-/* Estilos para pantallas de escritorio -----------*/
-/* Estilos para pantallas de escritorio */
-@media screen and (min-width: 1024px) {
+.politicas p {
+    padding: 20px;
+}
+
+.contenido input[type="submit"] {
+    background-color: rgb(0, 73, 83);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.contenido input[type="submit"]:hover {
+    background-color: rgb(0, 178, 178);
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
     .contenido {
-        width: 60%; /* Definir un ancho para el contenido */
-        margin: 0 auto; /* Esto centrará horizontalmente el contenido */
-        padding: 50px;
-        justify-content: center; /* Centra horizontalmente el contenido */
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        box-sizing: border-box;
     }
 
     .politicas {
-        width: 100%; /* Utilizar el 100% del ancho del contenedor */
+        width: 100%;
+        border-radius: 20px;
+        background-color: rgba(126, 168, 113, 0.5);
+        padding: 20px;
+        text-align: center;
+    }
+
+    .politicas h2 {
+        margin-top: 20px;
+    }
+
+    .politicas p {
+        padding: 20px;
+    }
+
+    .contenido input[type="submit"] {
+        background-color: rgb(0, 73, 83);
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .contenido input[type="submit"]:hover {
+        background-color: rgb(0, 178, 178);
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .contenido {
+        width: 60%;
+        margin: 0 auto;
+        padding: 50px;
+        justify-content: center;
+    }
+
+    .politicas {
+        width: 100%;
         height: 100%;
         border-radius: 20px;
-        background-color: rgba(126, 168, 113, 0.5); /* 50% de transparencia */
+        background-color: rgba(126, 168, 113, 0.5);
     }
 
     .politicas h2 {

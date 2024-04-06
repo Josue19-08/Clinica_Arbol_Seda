@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const slides = document.querySelectorAll('.slide');
     const prevBtn = document.querySelector('.prev');
     const nextBtn = document.querySelector('.next');
+
+
     let currentIndex = 0;
   
     function showSlide(index) {
@@ -12,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
         } else {
           slide.style.display = 'none'; // Ocultar los demás slides
         }
+        
       });
     }
   

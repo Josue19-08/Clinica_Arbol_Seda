@@ -1,107 +1,322 @@
-body {
-    background-image: url('../img/inicio_registro.png');
-    background-size: cover; /* Para que la imagen cubra todo el fondo */
-    background-repeat: no-repeat; /* Para que la imagen no se repita */
-    /* Otros estilos si los necesitas */
+/* Estilos para pantallas más pequeñas, como celulares */
+@media screen and (max-width: 767px) {
+
+    body {
+        background-image: url('../img/inicio_registro.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin: 0;
+    }
+
+    .contenido {
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .buscar {
+        text-align: center;
+        margin: 20px auto;
+    }
+
+    #medicosTable {
+        font-size: 12px;
+        margin-top: 20px;
+        margin: 10px auto;
+    }
+
+    #medicosTable th {
+        border: 1px solid #000;
+        padding: 8px;
+        background-color: #3e5028;
+        color: #fff;
+    }
+
+    #medicosTable td {
+        border: 1px solid #000;
+        padding: 8px;
+        background-color: #729744;
+        color: #fff;
+    }
+
+    .contenido input {
+        width: 100%;
+        max-width: 300px;
+        padding: 10px;
+        margin: 8px 0;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    .buscar input {
+        width: 100%;
+        max-width: 200px;
+        height: 30px;
+        text-align: center;
+        border-radius: 3px;
+    }
+
+    .ubicacion,
+    .nombre {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    #medicosTable .id:hover,
+    #medicosTable .nombre:hover,
+    #medicosTable .especialidad:hover,
+    #medicosTable .ubicacion:hover {
+        background-color: #61724c;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 1);
+    }
+
+    .columnas {
+        color: #fff;
+    }
+
+    #pagination {
+        margin-top: 10px;
+    }
+
+    #pagination a {
+        display: inline-block;
+        padding: 5px 10px;
+        margin-right: 5px;
+        text-decoration: none;
+        color: #333;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+    }
+
+    #pagination a.active {
+        background-color: #007bff;
+        color: #fff;
+    }
+
+
 }
 
-.contenido {
-    display: flex;
-    justify-content: center;
-    align-items: start;
-    height: 100vh;
-    margin: 60px; /* Reducir el margen exterior */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+
+
+    body {
+        background-image: url('../img/inicio_registro.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .contenido {
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        height: 100vh;
+        margin: 60px;
+    }
+
+    .buscar {
+        margin: 40px;
+        text-align: center;
+    }
+
+    #medicosTable {
+        font-size: 12px;
+        margin-top: 25px;
+        margin: 10px;
+    }
+
+    #medicosTable th {
+        border: 1px solid #000;
+        padding: 10px;
+        background-color: #3e5028;
+        color: #fff;
+        max-width: 200px;
+    }
+
+    #medicosTable td {
+        border: 1px solid #000;
+        padding: 10px;
+        background-color: #729744;
+        color: #fff;
+        max-width: 200px;
+        max-height: 50px;
+    }
+
+    .contenido input {
+        width: 300px;
+        padding: 10px;
+        margin: 8px 0;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-top: 50px;
+    }
+
+    .buscar input {
+        width: 200px;
+        height: 30px;
+        text-align: center;
+        border-radius: 3px;
+    }
+
+    .ubicacion,
+    .nombre {
+        width: 400px;
+    }
+
+    #medicosTable .id:hover {
+        background-color: #61724c;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 1);
+    }
+
+    #medicosTable .nombre:hover {
+        background-color: #61724c;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 1);
+    }
+
+    #medicosTable .especialidad:hover {
+        background-color: #61724c;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 1);
+    }
+
+    #medicosTable .ubicacion:hover {
+        background-color: #61724c;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 1);
+    }
+
+    .columnas {
+        color: #fff;
+    }
+
+    #pagination {
+        margin-top: 10px;
+    }
+
+    #pagination a {
+        display: inline-block;
+        padding: 5px 10px;
+        margin-right: 5px;
+        text-decoration: none;
+        color: #333;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+    }
+
+    #pagination a.active {
+        background-color: #007bff;
+        color: #fff;
+    }
+
 }
 
-.buscar {
-    margin: 40px;
-    text-align: center;
-}
+/* Estilos para pantallas de escritorio -----------*/
+@media screen and (min-width: 1024px) {
 
-#medicosTable {
-    font-size: 12px;
-    margin-top: 25px;
-    margin: 10px; /* Establecer un margen interno */
-}
 
-#medicosTable th {
-    border: 1px solid #000;
-    padding: 10px;
-    background-color: #3e5028;
-    color: #fff;
-    max-width: 200px; /* Ancho máximo */
-}
+    body {
+        background-image: url('../img/inicio_registro.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
 
-#medicosTable td {
-    border: 1px solid #000;
-    padding: 10px;
-    background-color: #729744;
-    color: #fff;
-    max-width: 200px; /* Ancho máximo */
-    max-height: 50px; /* Altura máxima ajustada */
-}
+    .contenido {
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        height: 100vh;
+        margin: 60px;
+    }
 
-.contenido input {
-    width: 300px;
-    padding: 10px;
-    margin: 8px 0;
-    border-radius: 4px;
-    box-sizing: border-box;
-    margin-top: 50px;
-}
+    .buscar {
+        margin: 40px;
+        text-align: center;
+    }
 
-.buscar input {
-    width: 200px;
-    height: 30px;
-    text-align: center;
-    border-radius: 3px;
-}
+    #medicosTable {
+        font-size: 12px;
+        margin-top: 25px;
+        margin: 10px;
+    }
 
-.ubicacion,
-.nombre {
-    width: 400px;
-}
+    #medicosTable th {
+        border: 1px solid #000;
+        padding: 10px;
+        background-color: #3e5028;
+        color: #fff;
+        max-width: 200px;
+    }
 
-#medicosTable .id:hover {
-    background-color: #61724c;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 1);
-}
+    #medicosTable td {
+        border: 1px solid #000;
+        padding: 10px;
+        background-color: #729744;
+        color: #fff;
+        max-width: 200px;
+        max-height: 50px;
+    }
 
-#medicosTable .nombre:hover {
-    background-color: #61724c;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 1);
-}
+    .contenido input {
+        width: 300px;
+        padding: 10px;
+        margin: 8px 0;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-top: 50px;
+    }
 
-#medicosTable .especialidad:hover {
-    background-color: #61724c;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 1);
-}
+    .buscar input {
+        width: 200px;
+        height: 30px;
+        text-align: center;
+        border-radius: 3px;
+    }
 
-#medicosTable .ubicacion:hover {
-    background-color: #61724c;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 1);
-}
+    .ubicacion,
+    .nombre {
+        width: 400px;
+    }
 
-.columnas {
-    color: #fff;
-}
+    #medicosTable .id:hover {
+        background-color: #61724c;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 1);
+    }
 
-/* Estilos para la paginación */
-#pagination {
-    margin-top: 10px;
-}
+    #medicosTable .nombre:hover {
+        background-color: #61724c;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 1);
+    }
 
-#pagination a {
-    display: inline-block;
-    padding: 5px 10px;
-    margin-right: 5px;
-    text-decoration: none;
-    color: #333;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-}
+    #medicosTable .especialidad:hover {
+        background-color: #61724c;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 1);
+    }
 
-#pagination a.active {
-    background-color: #007bff;
-    color: #fff;
+    #medicosTable .ubicacion:hover {
+        background-color: #61724c;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 1);
+    }
+
+    .columnas {
+        color: #fff;
+    }
+
+    #pagination {
+        margin-top: 10px;
+    }
+
+    #pagination a {
+        display: inline-block;
+        padding: 5px 10px;
+        margin-right: 5px;
+        text-decoration: none;
+        color: #333;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+    }
+
+    #pagination a.active {
+        background-color: #007bff;
+        color: #fff;
+    }
+
 }

@@ -1,131 +1,399 @@
 body {
     background-image: url('../img/inicio_registro.png');
-    background-size: cover; /* Para que la imagen cubra todo el fondo */
-    background-repeat: no-repeat; /* Para que la imagen no se repita */
-    /* Otros estilos si los necesitas */
+    background-size: cover;
+    background-repeat: no-repeat;
+
 }
 
-/* Estilos para el calendario */
-.calendario {
-    font-family: Arial, sans-serif;
-    border-collapse: collapse;
-    width: 90%; /* Anchura del calendario */
-    max-width: 800px; /* Anchura máxima del calendario */
-    margin: 0 auto; /* Centrar el calendario horizontalmente */
-    padding: 20px; /* Espacio alrededor del calendario */
-    text-align: center; /* Centrar el contenido de la tabla */
-    height: 100vh;
+/* Estilos para pantallas más pequeñas, como celulares */
+@media screen and (max-width: 767px) {
+
+    .calendario {
+        font-family: Arial, sans-serif;
+        border-collapse: collapse;
+        width: 88%;
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 10px;
+        text-align: center;
+        height: 100vh;
+    }
+
+    .calendario th,
+    .calendario td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: center;
+        width: 30px;
+        height: 30px;
+    }
+
+    .calendario th {
+        background-color: #f2f2f2;
+    }
+
+    .calendario td {
+        cursor: pointer;
+        background-color: rgba(255, 255, 255, 0.7);
+    }
+
+    .calendario td:hover {
+        background-color: #77a882;
+        color: black;
+    }
+
+    .hoy {
+        color: red;
+    }
+
+    .navegacion button {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 5px 10px;
+        font-size: 12px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 5px;
+        margin-top: 8px;
+    }
+
+    #titulo-mes {
+        margin-bottom: 10px;
+    }
+
+    .calendar {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .day {
+        width: 25px;
+        height: 25px;
+        margin: 3px;
+        background-color: #e0e0e0;
+    }
+
+    .selected {
+        background-color: #00ff00;
+    }
+
+    .schedule {
+        padding: 10px;
+        border-radius: 10px;
+        max-width: 350px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .schedule h2 {
+        color: #ffffff;
+        margin-bottom: 8px;
+    }
+
+    .schedule label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .schedule input[type="time"],
+    .schedule select {
+        width: 100%;
+        padding: 8px;
+        margin: 6px 0;
+        border: 1px solid #f2f2f2;
+        border-radius: 4px;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    .schedule button {
+        background-color: #445016;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        padding: 8px 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .schedule button:hover {
+        background-color: #64771a;
+    }
+
+    .seleccionado {
+        background-color: lightblue;
+    }
+
 }
 
-.calendario th, .calendario td {
-    border: 1px solid #ddd;
-    padding: 20px; /* Aumentar el espacio dentro de las celdas */
-    text-align: center;
-    min-width: 50px; /* Ancho mínimo de las celdas */
-    height: 50px; /* Altura de las celdas */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+
+    body {
+        background-image: url('../img/inicio_registro.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .calendario {
+        font-family: Arial, sans-serif;
+        border-collapse: collapse;
+        width: 90%;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        text-align: center;
+        height: 100vh;
+    }
+
+    .calendario th,
+    .calendario td {
+        border: 1px solid #ddd;
+        padding: 20px;
+        text-align: center;
+        min-width: 50px;
+        height: 50px;
+    }
+
+    .calendario th {
+        background-color: #f2f2f2;
+    }
+
+    .calendario td {
+        cursor: pointer;
+        background-color: rgba(255, 255, 255, 0.7);
+    }
+
+    .calendario td:hover {
+        background-color: #77a882;
+        color: black;
+    }
+
+    .hoy {
+        color: red;
+    }
+
+    .navegacion button {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 5px 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 12px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 5px;
+        margin-top: 8px;
+    }
+
+    #titulo-mes {
+        margin-bottom: 20px;
+    }
+
+    .calendar {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .day {
+        width: 30px;
+        height: 30px;
+        margin: 5px;
+        background-color: #e0e0e0;
+    }
+
+    .selected {
+        background-color: #00ff00;
+    }
+
+
+    .schedule {
+        padding: 20px;
+        border-radius: 10px;
+        max-width: 400px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .schedule h2 {
+        color: #ffffff;
+        margin-bottom: 10px;
+    }
+
+    .schedule label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .schedule input[type="time"],
+    .schedule select {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+        border: 1px solid #f2f2f2;
+        border-radius: 4px;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    .schedule button {
+        background-color: #445016;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        padding: 10px 20px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .schedule button:hover {
+        background-color: #64771a;
+    }
+
+
+
+    .seleccionado {
+        background-color: lightblue;
+    }
+
 }
 
-.calendario th {
-    background-color: #f2f2f2;
-}
-
-.calendario td {
-    cursor: pointer;
-    background-color: rgba(255, 255, 255, 0.7);
-}
-
-.calendario td:hover {
-    background-color: #77a882;
-    color: black;
-}
-
-.hoy {
-    color: red;
-}
-
-/* Estilos para los botones de navegación */
-.navegacion button {
-    background-color: #4CAF50; /* Color de fondo */
-    border: none;
-    color: white; /* Color del texto */
-    padding: 5px 10px; /* Espaciado interno */
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size:12px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 5px; /* Borde redondeado */
-    margin-top: 8px;
-}
-
-#titulo-mes {
-    margin-bottom: 20px;
-}
-
-/* styles.css */
-.calendar {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
-  .day {
-    width: 30px;
-    height: 30px;
-    margin: 5px;
-    background-color: #e0e0e0; /* Color de fondo por defecto */
-  }
-  
-  .selected {
-    background-color: #00ff00; /* Color de fondo cuando se selecciona */
-  }
-  
-
-  .schedule {
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 400px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.schedule h2 {
-    color: #ffffff;
-    margin-bottom: 10px;
-}
-
-.schedule label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-.schedule input[type="time"],
-.schedule select {
-    width: 100%;
-    padding: 10px;
-    margin: 8px 0;
-    border: 1px solid #f2f2f2;
-    border-radius: 4px;
-    box-sizing: border-box;
-    text-align: center;
-}
-
-.schedule button {
-    background-color: #445016;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.schedule button:hover {
-    background-color: #64771a;
-}
+/* Estilos para pantallas de escritorio -----------*/
+@media screen and (min-width: 1024px) {
 
 
-/* Estilo para el día seleccionado */
-.seleccionado {
-    background-color: lightblue; /* Cambiar al color que desees */
+    body {
+        background-image: url('../img/inicio_registro.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+
+    }
+
+    /* Estilos para el calendario */
+    .calendario {
+        font-family: Arial, sans-serif;
+        border-collapse: collapse;
+        width: 90%;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        text-align: center;
+        height: 100vh;
+    }
+
+    .calendario th,
+    .calendario td {
+        border: 1px solid #ddd;
+        padding: 20px;
+        text-align: center;
+        min-width: 50px;
+        height: 50px;
+    }
+
+    .calendario th {
+        background-color: #f2f2f2;
+    }
+
+    .calendario td {
+        cursor: pointer;
+        background-color: rgba(255, 255, 255, 0.7);
+    }
+
+    .calendario td:hover {
+        background-color: #77a882;
+        color: black;
+    }
+
+    .hoy {
+        color: red;
+    }
+
+    /* Estilos para los botones de navegación */
+    .navegacion button {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 5px 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 12px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 5px;
+        margin-top: 8px;
+    }
+
+    #titulo-mes {
+        margin-bottom: 20px;
+    }
+
+    .calendar {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .day {
+        width: 30px;
+        height: 30px;
+        margin: 5px;
+        background-color: #e0e0e0;
+    }
+
+    .selected {
+        background-color: #00ff00;
+    }
+
+
+    .schedule {
+        padding: 20px;
+        border-radius: 10px;
+        max-width: 400px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .schedule h2 {
+        color: #ffffff;
+        margin-bottom: 10px;
+    }
+
+    .schedule label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .schedule input[type="time"],
+    .schedule select {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+        border: 1px solid #f2f2f2;
+        border-radius: 4px;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    .schedule button {
+        background-color: #445016;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        padding: 10px 20px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .schedule button:hover {
+        background-color: #64771a;
+    }
+
+
+    /* Estilo para el día seleccionado */
+    .seleccionado {
+        background-color: lightblue;
+    }
+
 }

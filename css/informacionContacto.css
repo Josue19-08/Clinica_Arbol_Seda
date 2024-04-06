@@ -1,10 +1,8 @@
 body {
     background-image: url('../img/inicio_registro.png');
-    background-size: cover; /* Para que la imagen cubra todo el fondo */
-    background-repeat: no-repeat; /* Para que la imagen no se repita */
-    /* Otros estilos si los necesitas */
+    background-size: cover;
+    background-repeat: no-repeat;
 }
-
 
 .formulario {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 1);
@@ -26,31 +24,132 @@ body {
     background-color: #64771a;
 }
 
-/* Estilos para pantallas de escritorio -----------*/
+@media screen and (max-width: 767px) {
+    .contenido {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        margin: 10px;
+    }
+
+    .direccion {
+        width: 100%;
+        height: 50vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 10px;
+        color: #fff;
+        margin-bottom: 20px;
+    }
+
+    .direccion p {
+        padding: 10px;
+    }
+
+    .direccion iframe {
+        border-radius: 20px;
+        width: 70%;
+        height: 70%;
+    }
+
+    .formulario {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        border-radius: 20px;
+        background-color: #f2f2f2;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 70%;
+    }
+
+    .formulario input,
+    .formulario select,
+    .formulario button {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .contenido {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        margin: 10px;
+    }
+
+    .direccion {
+        width: 100%;
+        height: 50vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 10px;
+        color: #fff;
+        margin-bottom: 20px;
+    }
+
+    .direccion p {
+        padding: 10px;
+    }
+
+    .direccion iframe {
+        border-radius: 20px;
+        width: 70%;
+        height: 70%;
+    }
+
+    .formulario {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        border-radius: 20px;
+        background-color: #f2f2f2;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 70%;
+    }
+
+    .formulario input,
+    .formulario select,
+    .formulario button {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+}
+
 @media screen and (min-width: 1024px) {
-   
     h2 {
         text-align: center;
     }
-    
+
     .contenido {
         display: flex;
         flex-direction: row;
         height: 100%;
         margin: 10px;
-        /* 100% del viewport height */
     }
 
     .articulos {
         display: flex;
         flex-direction: row;
-        /* Los elementos dentro de .articulos se alinearán verticalmente */
         flex: 1;
-        /* El div .articulos ocupará todo el espacio restante vertical */
         padding-left: 20px;
         padding-right: 20px;
     }
-    
+
     .direccion {
         width: 50%;
         height: 100vh;
@@ -63,7 +162,7 @@ body {
     }
 
     .direccion {
-        margin-bottom: 20px; /* Espacio entre los elementos */
+        margin-bottom: 20px;
     }
 
     .direccion iframe {
@@ -81,7 +180,6 @@ body {
     }
 }
 
-/* Estilos para los elementos del formulario */
 .formulario input[type="text"],
 .formulario input[type="number"],
 .formulario input[type="email"],
@@ -90,18 +188,16 @@ body {
     width: 100%;
     padding: 10px;
     margin: 8px 0;
-    border: 1px solid #f2f2f2; /* Añade borde igual que los otros inputs */
+    border: 1px solid #f2f2f2;
     border-radius: 4px;
     box-sizing: border-box;
 }
 
-/* Estilos específicos para el textarea */
 .formulario textarea {
-    resize: none; /* Evita que el textarea sea redimensionable */
-    height: 100px; /* Altura inicial del textarea, puedes ajustarla según tus necesidades */
+    resize: none;
+    height: 100px;
 }
 
-/* Estilos para el botón del formulario */
 .formulario input[type="submit"] {
     background-color: #445016;
     color: #fff;
@@ -112,8 +208,6 @@ body {
     margin-top: 10px;
 }
 
-/* Estilos para el botón del formulario al hacer hover */
 .formulario input[type="submit"]:hover {
     background-color: #64771a;
 }
-

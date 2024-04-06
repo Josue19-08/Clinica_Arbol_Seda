@@ -43,8 +43,6 @@
     align-content: center;
 }
 
-/* Estilos para pantallas más pequeñas, como celulares */
-/* Estilos para pantallas de dispositivos móviles */
 @media screen and (max-width: 767px) {
     .articulos {
         display: flex;
@@ -60,10 +58,7 @@
     .valores,
     .equipo {
         width: calc(50% - 20px);
-        /* Calculamos el ancho para que haya dos elementos por fila */
         margin: 10px;
-        /* Espacio entre los elementos */
-
     }
 }
 
@@ -78,7 +73,6 @@
         font-size: 20px;
         width: 300px;
         margin: auto;
-        /* Centra horizontalmente */
     }
 
     p {
@@ -86,7 +80,6 @@
         font-size: 15px;
         width: 400px;
         margin: auto;
-        /* Centra horizontalmente */
     }
 
     .descripcionEquipoSistema,
@@ -96,17 +89,13 @@
     .valores,
     .equipo {
         padding: 20px;
-        /* Añade un poco de espacio alrededor del contenido */
         margin: auto;
-        /* Esto centrará horizontalmente el div */
         margin-top: 40px;
         margin-bottom: 40px;
         width: 500px;
     }
 }
 
-
-/* Estilos para pantallas de escritorio */
 @media screen and (min-width: 1024px) {
     .articulos {
         display: grid;
@@ -128,7 +117,6 @@
         justify-content: center;
     }
 
-    /* Estilos para la posición de los cuadros */
     .descripcionEquipoSistema:nth-child(2) {
         grid-column: 1;
         grid-row: 1;

@@ -1,9 +1,7 @@
-
 body {
     background-image: url('../img/inicio_registro.png');
-    background-size: cover; /* Para que la imagen cubra todo el fondo */
-    background-repeat: no-repeat; /* Para que la imagen no se repita */
-    /* Otros estilos si los necesitas */
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 /* Estilos para pantallas más pequeñas, como celulares */
@@ -152,14 +150,10 @@ body {
         justify-content: center;
     }
 
-    /* Establecer las propiedades para los elementos de las preguntas */
     .pregunta {
         width: calc(40% - 20px);
-        /* Calcula el ancho de cada pregunta */
         margin: 10px;
-        /* Margen entre los elementos */
         height: calc(40% - 20px);
-        /* Calcula el 50% de la altura menos el margen */
         background-color: rgb(255, 255, 255);
         border-radius: 20px;
         margin: 30px;
@@ -189,7 +183,6 @@ body {
 
     .respuesta {
         display: none;
-        /* Oculta la respuesta por defecto */
         padding: 10px;
         text-align: cente;
         width: calc(100% - 50px);

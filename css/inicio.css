@@ -2,9 +2,9 @@
 
 body {
     background-image: url('../img/fondoIndex.png');
-    background-size: cover; /* Para que la imagen cubra todo el fondo */
-    background-repeat: no-repeat; /* Para que la imagen no se repita */
-    /* Otros estilos si los necesitas */
+    background-size: cover; 
+    background-repeat: no-repeat; 
+
 }
 
 
@@ -31,6 +31,106 @@ button {
     right: 0;
 }
 
+.hoja1 img {
+    width: 70px; 
+    height: 35px; 
+    position: fixed;
+    top: -50px; 
+    left: calc(50% - 25px); 
+    animation: caidaHoja 45s linear infinite; 
+}
+
+.hoja2 img {
+    width: 70px; 
+    height: 35px; 
+    position: fixed;
+    top: -50px; 
+    left: calc(85% - 25px); 
+    animation: caidaHoja 30s linear infinite; 
+}
+
+.hoja3 img {
+    width: 70px; 
+    height: 35px; 
+    position: fixed;
+    top: -50px; 
+    left: calc(22% - 25px); 
+    animation: caidaHoja 25s linear infinite; 
+}
+
+@keyframes caidaHoja {
+    0% {
+        transform: translateY(-50px) translateX(80px); /* Inicialmente arriba y sin desplazamiento horizontal */
+    }
+    5% {
+        transform: translateY(5vh) translateX(-80px); /* A la mitad del recorrido, mover a la derecha */
+    }
+    10% {
+        transform: translateY(10vh) translateX(80px); /* A la mitad del recorrido, mover a la derecha */
+    }
+    15% {
+        transform: translateY(15vh) translateX(-80px); /* A la mitad del recorrido, mover a la derecha */
+    }
+    20% {
+        transform: translateY(20vh) translateX(80px); /* A la mitad del recorrido, mover a la derecha */
+    }
+    25% {
+        transform: translateY(25vh) translateX(-80px); /* A la mitad del recorrido, mover a la derecha */
+    }
+    30% {
+        transform: translateY(30vh) translateX(80px); /* A la mitad del recorrido, mover a la derecha */
+    }
+    35% {
+        transform: translateY(35vh) translateX(-80px); /* A la mitad del recorrido, mover a la derecha */
+    }
+    40% {
+        transform: translateY(40vh) translateX(80px); /* A la mitad del recorrido, mover a la derecha */
+    }
+    45% {
+        transform: translateY(45vh) translateX(-80px); /* A la mitad del recorrido, mover a la derecha */
+    }
+    50% {
+        transform: translateY(50vh) translateX(80px); /* A la mitad del recorrido, mover a la derecha */
+    }
+    55% {
+        transform: translateY(55vh) translateX(-80px); /* A la mitad del recorrido, mover a la derecha */
+    }
+    60% {
+        transform: translateY(60vh) translateX(80px); /* A la mitad del recorrido, mover a la derecha */
+    }
+    65% {
+        transform: translateY(65vh) translateX(-80px); /* A la mitad del recorrido, mover a la derecha */
+    }
+    70% {
+        transform: translateY(70vh) translateX(80px); /* A la mitad del recorrido, mover a la derecha */
+    }
+    75% {
+        transform: translateY(75vh) translateX(-80px); /* A la mitad del recorrido, mover a la derecha */
+    }
+    80% {
+        transform: translateY(80vh) translateX(80px); /* A la mitad del recorrido, mover a la derecha */
+    }
+    85% {
+        transform: translateY(85vh) translateX(-80px); /* A la mitad del recorrido, mover a la derecha */
+    }
+    90% {
+        transform: translateY(90vh) translateX(80px); /* A la mitad del recorrido, mover a la derecha */
+    }
+    95% {
+        transform: translateY(95vh) translateX(-80px); /* A la mitad del recorrido, mover a la derecha */
+    }
+    100% {
+        transform: translateY(100vh) translateX(80px); /* Al final, abajo y mover a la izquierda */
+    }
+    105% {
+        transform: translateY(105vh) translateX(-80px); /* Al final, abajo y mover a la izquierda */
+    }
+    110% {
+        transform: translateY(110vh) translateX(80px); /* Al final, abajo y mover a la izquierda */
+    }
+}
+
+
 /*Medidas para teléfonos*/
 @media screen and (max-width: 767px) {
     .contenido {
@@ -47,7 +147,8 @@ button {
 
     .descripcion {
         font-size: 1.5em;
-        margin-top: 50px;
+        margin: 20x;
+        padding: 20px;
     }
 
     .carousel {
@@ -159,13 +260,13 @@ button {
         padding: 70px;
         font-size: 1.5em;
         margin-top: 20px;
-        width: 50%; /* Ancho definido */
-        margin: 0 auto; /* Centrado horizontal */
+        width: 50%; 
+        margin: 0 auto; 
         margin-top: 10px;
         margin-bottom: 20px;
-        display: flex; /* Para centrado vertical */
-        justify-content: center; /* Para centrado vertical */
-        align-items: center; /* Para centrado vertical */
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
     }
     
 

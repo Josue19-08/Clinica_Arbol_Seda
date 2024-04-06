@@ -1,7 +1,7 @@
 const medicos = [
     
   {
-    id: "9-0999-0999",
+    id: "09-0999-0999",
     nombre: "José Aguilar Brenes",
     especialidad: "Ortopedia",
     ubicacion: "Av. 10, Cartago, Clínica Médica Cartago Central",
@@ -17,7 +17,7 @@ const medicos = [
     biografia: "El Dr. José Aguilar es un ortopedista especializado en el tratamiento de lesiones y trastornos musculoesqueléticos. Ofrece opciones de tratamiento innovadoras y personalizadas para mejorar la movilidad y la calidad de vida de sus pacientes."
   },
     {
-      id: "2-0222-0222",
+      id: "02-0222-0222",
       nombre: "María Gómez Sojo",
       especialidad: "Pediatría",
       ubicacion: "Calle 5, San José, Distrito Médico Los Ángeles",
@@ -33,7 +33,7 @@ const medicos = [
       biografia: "La Dra. María Gómez se especializa en el cuidado de la salud de los niños..."
     },
     {
-      id: "3-0333-0333",
+      id: "03-0333-0333",
         nombre: "Lisandro Arguedas Masís",
         especialidad: "Medicina General",
         ubicacion: "Paseo Colón 789, San José, Centro de Especialidades Médicas San Lucas",
@@ -49,7 +49,7 @@ const medicos = [
         biografia: "El Dr. Lisandro Arguedas es un médico general con una amplia experiencia en el cuidado de pacientes de todas las edades. Se especializa en diagnósticos precisos y tratamientos efectivos para una variedad de condiciones médicas."
       },
       {
-        id: "1-0111-0111",
+        id: "01-0111-0111",
         nombre: "Juan Pérez Aguilar",
         especialidad: "Cardiología",
         ubicacion: "Ave. Central 123, San José, Barrio Médico",
@@ -65,7 +65,7 @@ const medicos = [
         biografia: "El Dr. Juan Pérez es un cardiólogo con más de 10 años de experiencia..."
       },
       {
-        id: "5-0555-0555",
+        id: "05-0555-0555",
         nombre: "Andrés Rojas Hernández",
         especialidad: "Oftalmología",
         ubicacion: "Calle 1, Heredia, Centro de Salud Familiar San Rafael",
@@ -81,7 +81,7 @@ const medicos = [
         biografia: "El Dr. Andrés Rojas es un oftalmólogo especializado en el diagnóstico y tratamiento de enfermedades oculares. Su objetivo es proporcionar a sus pacientes una visión clara y una mejor calidad de vida."
       },
       {
-        id: "6-0666-0666",
+        id: "06-0666-0666",
         nombre: "Laura Chacón Marín",
         especialidad: "Ginecología",
         ubicacion: "Av. Central 456, Heredia, Consultorio Médico Los Pinos",
@@ -97,7 +97,7 @@ const medicos = [
         biografia: "La Dra. Laura Chacón es una ginecóloga dedicada al cuidado de la salud reproductiva de las mujeres. Ofrece servicios médicos personalizados y compasivos para mujeres de todas las edades."
       },
       {
-        id: "4-0444-0444",
+        id: "04-0444-0444",
         nombre: "Sofía Mora Vargas",
         especialidad: "Dermatología",
         ubicacion: "Av. 2, San José, Clínica Médica Integral del Este",
@@ -113,7 +113,7 @@ const medicos = [
         biografia: "La Dra. Sofía Mora es una dermatóloga experta en el tratamiento de enfermedades de la piel, cabello y uñas. Su enfoque es proporcionar cuidado de alta calidad y personalizado a cada paciente."
       },
       {
-        id: "7-0777-0777",
+        id: "07-0777-0777",
         nombre: "Javier Morales Garbanzo",
         especialidad: "Pediatría",
         ubicacion: "Calle Principal 789, Alajuela, Clínica Especializada La Aurora",
@@ -128,7 +128,7 @@ const medicos = [
         ],
         biografia: "El Dr. Javier Morales es un pediatra comprometido con el bienestar de los niños y adolescentes. Proporciona atención médica integral y personalizada para garantizar un desarrollo saludable."
       },
-      {id: "8-0888-0888",
+      {id: "08-0888-0888",
         nombre: "Ana Navarro Solís",
         especialidad: "Neurología",
         ubicacion: "Paseo de las Flores 1011, Alajuela, Centro Médico San Miguel",
@@ -145,7 +145,7 @@ const medicos = [
       },
       
       {
-        id: "1-0101-0101",
+        id: "01-0101-0101",
         nombre: "Claudia Solano Saenz",
         especialidad: "Oncología",
         ubicacion: "Calle 3, Cartago, Consultorio Médico La Paz",
@@ -161,7 +161,7 @@ const medicos = [
         biografia: "La Dra. Claudia Solano es una oncóloga con experiencia en el diagnóstico y tratamiento del cáncer. Su objetivo es proporcionar atención integral y compasiva a los pacientes y sus familias."
       },
       {
-        id: "2-0202-0202",
+        id: "02-0202-0202",
         nombre: "Carlos Vargas Badilla",
         especialidad: "Psiquiatría",
         ubicacion: "Av. 6, Limón, Centro de Salud del Caribe",
@@ -177,7 +177,7 @@ const medicos = [
         biografia: "El Dr. Carlos Vargas es un psiquiatra comprometido con el bienestar mental de sus pacientes. Ofrece evaluaciones exhaustivas y tratamientos efectivos para una variedad de trastornos psiquiátricos."
       },
       {
-        id: "3-0303-0303",
+        id: "03-0303-0303",
         nombre: "Marcela Gutiérrez Daniels",
         especialidad: "Endocrinología",
         ubicacion: "Calle 8, Limón, Clínica Especializada Limón Norte",
@@ -193,7 +193,7 @@ const medicos = [
         biografia: "La Dra. Marcela Gutiérrez es una endocrinóloga especializada en el diagnóstico y tratamiento de trastornos hormonales. Ofrece cuidado compasivo y atención personalizada a sus pacientes."
       },
       {
-        id: "4-0404-0404",
+        id: "04-0404-0404",
         nombre: "Alejandro Sánchez Romero",
         especialidad: "Urología",
         ubicacion: "Av. 4, Puntarenas, Consultorio Médico Puntarenas Oeste",
@@ -209,7 +209,7 @@ const medicos = [
         biografia: "El Dr. Alejandro Sánchez es un urología dedicado al diagnóstico y tratamiento de trastornos del sistema urinario. Su enfoque es proporcionar atención de alta calidad y compasión a sus pacientes."
       },
       {
-        id: "8542-1231-8765",
+        id: "42-1231-8765",
         nombre: "Pedro Mendoza Campos",
         especialidad: "Psicología",
         ubicacion: "Calle 10, San José, Clínica Mental Oasis",
@@ -225,7 +225,7 @@ const medicos = [
         biografia: "El Dr. Pedro Mendoza es un psicólogo con amplia experiencia en el tratamiento de trastornos mentales. Ofrece terapias personalizadas para ayudar a sus pacientes a mejorar su bienestar emocional."
       },
       {
-        id: "2678-9876-5432",
+        id: "78-9876-5432",
         nombre: "Carolina Gutiérrez López",
         especialidad: "Nutrición",
         ubicacion: "Av. 5, Heredia, Consultorio Nutricional Saludable",
@@ -241,7 +241,7 @@ const medicos = [
         biografia: "La Dra. Carolina Gutiérrez es una nutricionista comprometida con la promoción de hábitos alimenticios saludables. Ofrece asesoramiento nutricional personalizado para mejorar la calidad de vida de sus pacientes."
       },
       {
-        id: "9785-5432-1234",
+        id: "85-5432-1234",
         nombre: "Roberto Cruz Montero",
         especialidad: "Odontología",
         ubicacion: "Calle 2, San José, Clínica Dental Sonrisa Perfecta",
@@ -257,7 +257,7 @@ const medicos = [
         biografia: "El Dr. Roberto Cruz es un odontólogo con experiencia en tratamientos dentales estéticos y restauradores. Su objetivo es brindar a sus pacientes una sonrisa saludable y hermosa."
       },
       {
-        id: "4321-5678-9785",
+        id: "21-5678-9785",
         nombre: "Verónica Solís Chaves",
         especialidad: "Dermatología",
         ubicacion: "Av. 8, Cartago, Centro Dermatológico Bella Piel",
@@ -273,7 +273,7 @@ const medicos = [
         biografia: "La Dra. Verónica Solís es una dermatóloga experta en el tratamiento de enfermedades de la piel, cabello y uñas. Su enfoque es proporcionar cuidado de alta calidad y personalizado a cada paciente."
       },
       {
-        id: "7890-1234-2678",
+        id: "90-1234-2678",
         nombre: "Fernando Méndez Castro",
         especialidad: "Cirugía General",
         ubicacion: "Calle 3, Alajuela, Hospital Cirugía Avanzada",
@@ -289,7 +289,7 @@ const medicos = [
         biografia: "El Dr. Fernando Méndez es un cirujano general con experiencia en una amplia gama de procedimientos quirúrgicos. Ofrece atención de alta calidad y resultados exitosos para mejorar la salud de sus pacientes."
       },
       {
-        id: "1234-5678-9012",
+        id: "34-5678-9012",
         nombre: "Laura Salazar Ramírez",
         especialidad: "Neurología",
         ubicacion: "Calle 6, Heredia, Centro Médico Neuronal",
@@ -305,7 +305,7 @@ const medicos = [
         biografia: "La Dra. Laura Salazar es una neuróloga dedicada al diagnóstico y tratamiento de trastornos neurológicos. Ofrece atención compasiva y efectiva para mejorar la calidad de vida de sus pacientes."
       },
       {
-        id: "5678-9012-3456",
+        id: "78-9012-3456",
         nombre: "Santiago Jiménez Solano",
         especialidad: "Ortopedia",
         ubicacion: "Av. 4, San José, Clínica de Ortopedia Avanzada",
@@ -321,7 +321,7 @@ const medicos = [
         biografia: "El Dr. Santiago Jiménez es un ortopedista especializado en el tratamiento de lesiones y trastornos musculoesqueléticos. Ofrece opciones de tratamiento innovadoras y personalizadas para mejorar la movilidad y la calidad de vida de sus pacientes."
       },
       {
-        id: "9012-3456-7890",
+        id: "12-3456-7890",
         nombre: "Ana María Fernández Chacón",
         especialidad: "Ginecología",
         ubicacion: "Calle 9, Cartago, Clínica de Salud Femenina",
@@ -337,7 +337,7 @@ const medicos = [
         biografia: "La Dra. Ana María Fernández es una ginecóloga comprometida con la salud femenina. Ofrece servicios médicos personalizados y compasivos para mujeres de todas las edades."
       },
       {
-        id: "3456-7890-1234",
+        id: "56-7890-1234",
         nombre: "Martín Vargas Sánchez",
         especialidad: "Cardiología",
         ubicacion: "Av. 7, Alajuela, Centro de Cardiología Integral",
@@ -353,7 +353,7 @@ const medicos = [
         biografia: "El Dr. Martín Vargas es un cardiólogo con amplia experiencia en el diagnóstico y tratamiento de enfermedades del corazón. Ofrece atención integral y personalizada para garantizar la salud cardiovascular de sus pacientes."
       },
       {
-        id: "7890-1234-5678",
+        id: "90-1234-5678",
         nombre: "María Rodríguez Gómez",
         especialidad: "Psiquiatría",
         ubicacion: "Calle 5, Limón, Consultorio Psiquiátrico Bienestar Mental",
