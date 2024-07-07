@@ -14,7 +14,8 @@ h2 {
 }
 
 .formulario input[type="password"],
-.formulario input[type="text"] {
+.formulario input[type="text"],
+.formulario input[type="email"] {
     border: 1px solid #f2f2f2;
     text-align: center;
 }
@@ -91,7 +92,6 @@ nav ul li a:hover {
     }
 }
 
-
 /* Estilos para pantallas más pequeñas, como celulares */
 @media screen and (max-width: 767px) {
     h2 {
@@ -112,7 +112,8 @@ nav ul li a:hover {
     }
 
     .formulario input[type="password"],
-    .formulario input[type="text"] {
+    .formulario input[type="text"],
+    .formulario input[type="email"] {
         width: 100%;
         padding: 10px;
         margin: 8px 0;
@@ -152,7 +153,8 @@ nav ul li a:hover {
     }
 
     .formulario input[type="password"],
-    .formulario input[type="text"] {
+    .formulario input[type="text"],
+    .formulario input[type="email"] {
         width: 100%;
         padding: 10px;
         margin: 8px 0;
@@ -192,7 +194,8 @@ nav ul li a:hover {
     }
 
     .formulario input[type="password"],
-    .formulario input[type="text"] {
+    .formulario input[type="text"],
+    .formulario input[type="email"] {
         width: 100%;
         padding: 10px;
         margin: 8px 0;
