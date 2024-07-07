@@ -8,9 +8,9 @@
     <link rel="stylesheet" type="text/css" href="../css/estilo.css">
     <link rel="stylesheet" type="text/css" href="../css/inicioSesion.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
-    <script src="../js/inicioSesion.js"></script>
     <script src="../js/usuarioIniciado.js"></script>
-    <script src="../js/menu.js"></script> <!-- Archivo JavaScript para el menú -->
+    <script src="../js/menu.js"></script>
+    <script src="../js/recuperarContrasenna.js"></script> <!-- Archivo JavaScript para la recuperación -->
 </head>
 
 <body>
@@ -45,14 +45,13 @@
                 <form id="formulario" method="post">
                     <div class="usuarios">
                         <label>Contraseña:</label>
-                        <input id="contrasenna" type="password" required>
+                        <input id="nuevaContrasenna" type="password" required>
                     </div>
                     <div class="usuarios">
                         <label>Repite la Contraseña:</label>
-                        <input id="contrasenna" type="password" required>
+                        <input id="repiteContrasenna" type="password" required>
                     </div>
-                    <input id="botonIngresar" type="submit" value="Actualizar contraseña" onclick="window.location.href='inicioSesion.html'">
-
+                    <input id="botonActualizar" type="submit" value="Actualizar contraseña">
                 </form>
             </div>
         </div>
