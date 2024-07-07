@@ -1,7 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Obtener referencia al tbody de la tabla donde se mostrarán los médicos
+    // Obtener referencias a los elementos del DOM
     const medicosTableBody = document.getElementById('medicosBody');
-    // Obtener referencia al encabezado "Identificación"
+    const searchInput = document.getElementById('searchInput');
+    const searchCriteria = document.getElementById('searchCriteria');
+    const autocompleteList = document.getElementById('autocomplete-container');
     const idHeader = document.querySelector('.id');
     const nombreHeader = document.querySelector('.nombre');
     const especialidadHeader = document.querySelector('.especialidad');
@@ -9,10 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Función para mostrar los médicos en la tabla
     function displayMedicos(medicos) {
-        // Limpiar el tbody antes de mostrar los médicos para evitar duplicados
         medicosTableBody.innerHTML = '';
-
-        // Iterar sobre la lista de médicos y agregar cada uno a la tabla
         for (const medico of medicos) {
             const row = `
                 <tr data-id="${medico.id}">
@@ -25,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Función para ordenar los médicos por su identificación (id)
+    // Funciones para ordenar los médicos
     function ordenarPorId() {
         medicos.sort((a, b) => a.id.localeCompare(b.id));
         displayMedicos(medicos);
@@ -46,39 +45,72 @@ document.addEventListener("DOMContentLoaded", function () {
         displayMedicos(medicos);
     }
 
-    // Función para filtrar la tabla según el texto de búsqueda
+    // Función para filtrar la tabla según el criterio de búsqueda
     function filtrarTabla() {
         const textoBusqueda = searchInput.value.trim().toLowerCase();
+        if (!textoBusqueda) {
+            autocompleteList.innerHTML = '';
+            displayMedicos(medicos);
+            return;
+        }
 
-        // Filtrar los médicos que coincidan con el texto de búsqueda
-        const medicosFiltrados = medicos.filter(medico =>
-            medico.id.toLowerCase().includes(textoBusqueda) ||
-            medico.nombre.toLowerCase().includes(textoBusqueda) ||
-            medico.especialidad.toLowerCase().includes(textoBusqueda) ||
-            medico.ubicacion.toLowerCase().includes(textoBusqueda)
-        );
-        // Mostrar los médicos filtrados en la tabla
+        const criterio = searchCriteria.value;
+
+        let medicosFiltrados;
+
+        if (criterio === 'ninguno') {
+            medicosFiltrados = medicos.filter(medico =>
+                medico.id.toLowerCase().includes(textoBusqueda) ||
+                medico.nombre.toLowerCase().includes(textoBusqueda) ||
+                medico.especialidad.toLowerCase().includes(textoBusqueda) ||
+                medico.ubicacion.toLowerCase().includes(textoBusqueda)
+            );
+        } else {
+            medicosFiltrados = medicos.filter(medico =>
+                medico[criterio].toLowerCase().includes(textoBusqueda)
+            );
+        }
+
         displayMedicos(medicosFiltrados);
+        showAutocomplete(medicosFiltrados);
+    }
+
+    // Función para mostrar sugerencias de autocompletado
+    function showAutocomplete(medicosFiltrados) {
+        autocompleteList.innerHTML = '';
+        if (!searchInput.value.trim()) {
+            return;
+        }
+        for (const medico of medicosFiltrados) {
+            const item = document.createElement('div');
+            item.classList.add('autocomplete-item');
+            item.textContent = `${medico.nombre} (${medico.especialidad}) - ${medico.ubicacion}`;
+            item.addEventListener('click', () => {
+                searchInput.value = medico.nombre;
+                filtrarTabla();
+            });
+            autocompleteList.appendChild(item);
+        }
     }
 
     // Función para abrir la página web del médico al hacer clic en una fila de la tabla
     function abrirPaginaWebMedico(idMedico) {
-        // Aquí debes definir la lógica para redirigir a la página web del médico con el ID proporcionado
-        // Por ejemplo:
         window.location.href = `../html/doctor.html?id=${idMedico}`;
-
     }
 
-    // Llamar a la función para mostrar los médicos cuando se cargue la página
+    // Mostrar los médicos al cargar la página
     displayMedicos(medicos);
 
+    // Asignar eventos de clic a los encabezados para ordenar
     idHeader.addEventListener('click', ordenarPorId);
     nombreHeader.addEventListener('click', ordenarPorNombre);
     especialidadHeader.addEventListener('click', ordenarPorEspecialidad);
     ubicacionHeader.addEventListener('click', ordenarPorUbicacion);
+
+    // Asignar evento de input al campo de búsqueda para filtrar y autocompletar
     searchInput.addEventListener('input', filtrarTabla);
 
-    // Agregar un evento de clic a las filas de la tabla para abrir la página web del médico
+    // Asignar evento de clic a las filas de la tabla para abrir la página del médico
     medicosTableBody.addEventListener('click', function (event) {
         const fila = event.target.closest('tr');
         if (fila) {
@@ -87,43 +119,11 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+document.addEventListener('DOMContentLoaded', function() {
+    const menuHamburguesa = document.getElementById('menu-hamburguesa');
+    const menu = document.getElementById('menu');
 
-
-
-
-
-
-/*
-document.addEventListener("DOMContentLoaded", function() {
-    // Obtener referencia al tbody de la tabla donde se mostrarán los médicos
-    const medicosTableBody = document.getElementById('medicosBody');
-
-    // Función para mostrar los médicos en la tabla
-    function displayMedicos() {
-        // Limpiar el tbody antes de mostrar los médicos para evitar duplicados
-        medicosTableBody.innerHTML = '';
-
-        // Iterar sobre la lista de médicos y agregar cada uno a la tabla
-        for (const medico of medicos) {
-            const row = `
-                <tr>
-                    <td>${medico.nombre}</td>
-                    <td>${medico.especialidad}</td>
-                    <td>${medico.ubicacion}</td>
-                    <td>${medico.horarios}</td>
-                    <td>${medico.contacto.telefono}</td>
-                    <td>${medico.contacto.email}</td>
-                    <td>${formatResenas(medico.resenas)}</td> <!-- Asegúrate de que la función formatResenas esté definida y accesible aquí -->
-                    <td>${medico.biografia}</td>
-                </tr>`;
-            medicosTableBody.innerHTML += row;
-        }
-    }
-
-    // Llamar a la función para mostrar los médicos cuando se cargue la página
-    displayMedicos();
+    menuHamburguesa.addEventListener('click', function() {
+        menu.classList.toggle('active');
+    });
 });
-
-
-
-*/

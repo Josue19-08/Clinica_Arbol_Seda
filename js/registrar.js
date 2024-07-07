@@ -22,11 +22,38 @@ document.addEventListener("DOMContentLoaded", function() {
             return;
         }
 
+
         // Validar los campos del formulario
-        if (!validarCedula(cedula) || !validarNombre(nombre) || !validarApellidos(apellidos) || !validarCelular(celular) || !validarCorreo(correo) || !validarContrasenna(contrasenna, confirmarContrasenna)) {
-            alert('Por favor, complete correctamente todos los campos del formulario con su respectivo formato.');
-            return;
-        }
+            if(!validarCedula(cedula)){
+                alert("Cédula de Identidad: Debe cumplir con el formato ##-####-####");
+
+                return;
+            }
+            if(!validarNombre(nombre)){
+                alert("Nombre Completo: La longitud del campo debe ser máximo de 20 caracteres");
+
+                return;
+            }
+            if(!validarApellidos(apellidos)){
+                alert("Apellidos: La longitud del campo debe ser máximo de 30 caracteres");
+
+                return;
+            }
+            if(!validarCelular(celular)){
+                alert("Número de Celular: Debe cumplir con el formato ####-####");
+
+                return;
+            }
+            if(!validarCorreo(correo)){
+                alert("Correo Electrónico: Debe cumplir con el formato ##@####.###");
+
+                return;
+            }
+            if(!validarContrasenna(contrasenna, confirmarContrasenna)){
+                alert("Contraseña: \n- Debe cumplir con el formato que incluya al menos una mayúscula, una minúscula, números y un carácter especial y un máximo de 11 caracteres.\n- Se debe incluir un campo adicional en el formulario de registro para que los usuarios confirmen su contraseña.\n- La contraseña y su confirmación deben coincidir para completar el registro.\n- La contraseña debe ser cifrada con algún algoritmo de cifrado para proteger la información transmitida o almacenada en una base de datos.");
+
+                return;
+            }
 
         // Encriptar la contraseña
         var contrasennaEncriptada = CryptoJS.SHA256(contrasenna).toString();
@@ -93,3 +120,68 @@ document.addEventListener("DOMContentLoaded", function() {
         return contrasennaExpReg.test(contrasenna) && contrasenna === confirmarContrasenna;
     }
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const cedulaInput = document.getElementById('cedula');
+
+    cedulaInput.addEventListener('input', function (e) {
+        let value = this.value.replace(/\D/g, ''); // Remove non-numeric characters
+
+        // Limit the length to 8 digits
+        if (value.length > 10) {
+            value = value.slice(0, 8);
+        }
+
+        // Apply the format ##-####-####
+        if (value.length > 2 && value.length <= 6) {
+            value = value.slice(0, 2) + '-' + value.slice(2);
+        } else if (value.length > 6) {
+            value = value.slice(0, 2) + '-' + value.slice(2, 6) + '-' + value.slice(6);
+        }
+
+        this.value = value;
+    });
+
+    cedulaInput.addEventListener('keypress', function (e) {
+        if (!/[\d-]/.test(e.key)) {
+            e.preventDefault();
+        }
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const celularInput = document.getElementById('celular');
+
+    celularInput.addEventListener('input', function (e) {
+        let value = this.value.replace(/\D/g, ''); // Remove non-numeric characters
+
+        // Limit the length to 8 digits
+        if (value.length > 8) {
+            value = value.slice(0, 8);
+        }
+
+        // Apply the format ####-####
+        if (value.length > 4) {
+            value = value.slice(0, 4) + '-' + value.slice(4);
+        }
+
+        this.value = value;
+    });
+
+    celularInput.addEventListener('keypress', function (e) {
+        if (!/[\d-]/.test(e.key)) {
+            e.preventDefault();
+        }
+    });
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const menuHamburguesa = document.getElementById('menu-hamburguesa');
+    const menu = document.getElementById('menu');
+
+    menuHamburguesa.addEventListener('click', function() {
+        menu.classList.toggle('active');
+    });
+});
+

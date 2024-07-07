@@ -56,3 +56,13 @@ document.addEventListener("DOMContentLoaded", function() {
         estadoSesion.textContent = "Sin inicio de sesión";
     }
 });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const menuHamburguesa = document.getElementById('menu-hamburguesa');
+    const menu = document.getElementById('menu');
+
+    menuHamburguesa.addEventListener('click', function() {
+        menu.classList.toggle('active');
+    });
+});

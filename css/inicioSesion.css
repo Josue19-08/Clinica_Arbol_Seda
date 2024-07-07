@@ -35,7 +35,69 @@ h2 {
     color: white;
 }
 
+/* Estilos para el menú hamburguesa */
+.menu-hamburguesa {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
 
+
+
+
+/* Estilos para el menú */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #333; /* Cambia este color por el que prefieras */
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    display: block;
+    color: white; /* Color del texto */
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background-color: #3c5042; /* Color de fondo cuando se pasa el ratón por encima */
+}
+
+/* Estilos para el menú hamburguesa */
+.menu-hamburguesa {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: white; /* Color del icono de menú hamburguesa */
+}
+
+/* Estilos para dispositivos móviles */
+@media screen and (max-width: 767px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav ul li {
+        display: block;
+        text-align: left;
+    }
+
+    .menu-hamburguesa {
+        display: block;
+    }
+}
 
 /* Estilos para pantallas más pequeñas, como celulares */
 @media screen and (max-width: 767px) {
@@ -48,46 +110,36 @@ h2 {
     }
 
     .formulario {
-
         width: 300px;
         margin: 0 auto;
         margin-top: 140px;
         border-radius: 10px;
         padding: 20px;
         font-size: 15px;
-
     }
 
     .formulario input[type="password"],
     .formulario input[type="text"] {
-
         width: 100%;
         padding: 10px;
         margin: 8px 0;
         border-radius: 4px;
         box-sizing: border-box;
-
     }
 
     .formulario input[type="submit"] {
-
         padding: 10px 20px;
         border: none;
         border-radius: 4px;
         cursor: pointer;
-
     }
 
     .registrarse {
         font-size: 12px;
     }
-
 }
 
-
-
-
-/* Estilos para tabletas -----------------------*/
+/* Estilos para tabletas */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
     h2 {
         text-align: center;
@@ -120,21 +172,15 @@ h2 {
         border: none;
         border-radius: 4px;
         cursor: pointer;
-
     }
 
     .registrarse {
         font-size: 12px;
     }
-
 }
 
-
-
-
-/* Estilos para pantallas de escritorio -----------*/
+/* Estilos para pantallas de escritorio */
 @media screen and (min-width: 1024px) {
-
     h2 {
         text-align: center;
     }
@@ -145,7 +191,6 @@ h2 {
     }
 
     .formulario {
-
         width: 400px;
         margin: 0 auto;
         border-radius: 10px;
@@ -155,13 +200,11 @@ h2 {
 
     .formulario input[type="password"],
     .formulario input[type="text"] {
-
         width: 100%;
         padding: 10px;
         margin: 8px 0;
         border-radius: 4px;
         box-sizing: border-box;
-
     }
 
     .formulario input[type="submit"] {

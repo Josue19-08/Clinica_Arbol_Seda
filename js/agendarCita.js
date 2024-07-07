@@ -47,8 +47,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
                         // Verificar si hay una cita para esta fecha y cambiar el color de fondo si es necesario
                         var fechaCita = dia + ' ' + obtenerNombreMes(mes) + ' ' + año;
-                        if (citaRegistrada(fechaCita, citas)) {
-                            celda.style.backgroundColor = 'darkolivegreen'; // Color de fondo para las fechas con citas
+                        var cita = obtenerCitaPorFecha(fechaCita, citas);
+                        if (cita && cita.estado === 'Programada') {
+                            celda.style.backgroundColor = 'darkolivegreen'; // Color de fondo para las fechas con citas programadas
                         }
 
                         // Agregar evento de click a cada celda del calendario
@@ -56,6 +57,9 @@ document.addEventListener("DOMContentLoaded", function() {
                             if (celdaSeleccionadaPrev !== null) {
                                 // Restaurar color de la celda seleccionada previamente
                                 celdaSeleccionadaPrev.style.backgroundColor = '';
+                                if (cita && cita.estado === 'Programada') {
+                                    celdaSeleccionadaPrev.style.backgroundColor = 'darkolivegreen';
+                                }
                             }
                             // Cambiar color de la celda seleccionada
                             this.style.backgroundColor = 'lightblue';
@@ -72,9 +76,9 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }
 
-        // Función para verificar si hay una cita registrada para la fecha dada
-        function citaRegistrada(fecha, citas) {
-            return citas.some(function(cita) {
+        // Función para verificar si hay una cita registrada para la fecha dada y devolver la cita
+        function obtenerCitaPorFecha(fecha, citas) {
+            return citas.find(function(cita) {
                 return cita.fecha === fecha;
             });
         }
@@ -121,15 +125,35 @@ document.addEventListener("DOMContentLoaded", function() {
             // Obtener datos del paciente
             var paciente = usuarioIniciado;
 
-            // Obtener nombre del médico seleccionado
+            // Obtener nombre y correo del médico seleccionado
             var medicoSelect = document.getElementById('medico');
             var medicoNombre = medicoSelect.options[medicoSelect.selectedIndex].text;
+            var correoMedico = medicoSelect.options[medicoSelect.selectedIndex].getAttribute('data-correo');
 
             // Obtener fecha seleccionada en el calendario
             var fecha = obtenerFechaSeleccionada();
 
             // Obtener hora seleccionada
             var hora = document.getElementById('time').value;
+
+            // Verificar si la fecha seleccionada es anterior a la fecha actual
+            var fechaActual = new Date();
+            var fechaSeleccionada = new Date(`${fecha.split(' ')[2]}-${obtenerNumeroMes(fecha.split(' ')[1])}-${fecha.split(' ')[0]}`);
+            if (fechaSeleccionada < fechaActual.setHours(0, 0, 0, 0)) {
+                alert('No puedes programar una cita en una fecha anterior a la actual.');
+                return;
+            }
+
+            // Verificar si ya hay una cita programada con el mismo médico, fecha y hora que no esté cancelada
+            var citas = JSON.parse(localStorage.getItem('citas')) || [];
+            var conflicto = citas.some(function(cita) {
+                return cita.cedulaMedico === obtenerCedulaMedico(medicoNombre) && cita.fecha === fecha && cita.hora === hora && cita.estado === 'Programada';
+            });
+
+            if (conflicto) {
+                alert('Ya hay una cita programada con este médico a la misma hora.');
+                return;
+            }
 
             // Crear objeto de cita
             var cita = {
@@ -138,11 +162,11 @@ document.addEventListener("DOMContentLoaded", function() {
                 medico: medicoNombre,
                 cedulaMedico: obtenerCedulaMedico(medicoNombre),
                 fecha: fecha,
-                hora: hora
+                hora: hora,
+                estado: 'Programada'
             };
 
             // Guardar cita en localStorage
-            var citas = JSON.parse(localStorage.getItem('citas')) || [];
             citas.push(cita);
             localStorage.setItem('citas', JSON.stringify(citas));
 
@@ -151,6 +175,26 @@ document.addEventListener("DOMContentLoaded", function() {
 
             // Recargar el calendario para reflejar los cambios
             generarCalendario(mesActual, añoActual);
+
+            // Enviar correo de confirmación al paciente
+            const correoPaciente = {
+                to_name: paciente.nombre,
+                to_email: paciente.correo,
+                medico_nombre: medicoNombre,
+                fecha: fecha,
+                hora: hora
+            };
+            enviarCorreo(correoPaciente, 'confirmación');
+
+            // Enviar correo de confirmación al doctor
+            const correoDoctor = {
+                to_nameDoctor: medicoNombre.split(' (')[0],
+                to_paciente: paciente.nombre,
+                fecha: fecha,
+                hora: hora,
+                to_email_doctor: correoMedico
+            };
+            enviarCorreoDoctor(correoDoctor, 'confirmación');
         }
 
         // Función para obtener la fecha seleccionada en el calendario
@@ -169,10 +213,16 @@ document.addEventListener("DOMContentLoaded", function() {
             var opciones = medicoSelect.options;
             for (var i = 0; i < opciones.length; i++) {
                 if (opciones[i].text === nombreMedico) {
-                    return opciones[i].value.split('-'); // Retorna la cédula completa sin cortarla
+                    return opciones[i].value; // Retorna la cédula completa sin cortarla
                 }
             }
             return ''; // Retorna una cadena vacía si no se encuentra el médico
+        }
+
+        // Función para obtener el número del mes según su nombre
+        function obtenerNumeroMes(nombreMes) {
+            var nombresMeses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+            return nombresMeses.indexOf(nombreMes) + 1;
         }
         
         // Función para redirigir a la página de administrar citas
@@ -195,4 +245,29 @@ document.addEventListener("DOMContentLoaded", function() {
         var añoActual = new Date().getFullYear();
         generarCalendario(mesActual, añoActual);
     }
+
+    // Función para enviar correo utilizando EmailJS
+    function enviarCorreo(correo, tipo) {
+        emailjs.send('service_m7rotwq', 'template_p5anz3g', correo)
+            .then(function(response) {
+                console.log(`Correo de ${tipo} enviado con éxito!`, response.status, response.text);
+                alert(`Correo de ${tipo} enviado con éxito`);
+            }, function(error) {
+                console.error(`Error al enviar el correo de ${tipo}:`, error);
+                alert(`Error al enviar el correo de ${tipo}`);
+            });
+    }
+
+    // Función para enviar correo de confirmación al doctor utilizando EmailJS
+    function enviarCorreoDoctor(correo, tipo) {
+        emailjs.send('service_m7rotwq', 'template_bnv5eh5', correo)
+            .then(function(response) {
+                console.log(`Correo de ${tipo} enviado con éxito al doctor!`, response.status, response.text);
+                alert(`Correo de ${tipo} enviado con éxito al doctor`);
+            }, function(error) {
+                console.error(`Error al enviar el correo de ${tipo} al doctor:`, error);
+                alert(`Error al enviar el correo de ${tipo} al doctor`);
+            });
+    }
 });
+

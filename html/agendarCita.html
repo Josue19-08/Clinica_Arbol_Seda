@@ -6,7 +6,14 @@
     <title>Clínica Árbol de Seda</title>
     <link rel="stylesheet" type="text/css" href="../css/estilo.css">
     <link rel="stylesheet" type="text/css" href="../css/agendarCita.css">
-    
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+  emailjs.init('u5alWm-YIWRD1U1_q')
+</script>
+<script src="../js/menu.js"></script>
+
+
 </head>
 <body>
     <header>
@@ -14,7 +21,10 @@
         <br><div id="estadoSesion"></div>
         <div id="cerrarSesion"><p>Salir</p></div>
         <nav>
-            <ul>
+            <div class="menu-hamburguesa" id="menu-hamburguesa">
+                &#9776;
+            </div>
+            <ul id="menu">
                 <li><a href="../index.html">Inicio</a></li>
                 <li><a href="inicioSesion.html">Registro/Inicio Sesión</a></li>
                 <li><a href="agendarCita.html">Agendar Cita</a></li>
@@ -61,30 +71,31 @@
                 
                     <h2>Seleccionar médico:</h2>
                     <select id="medico">
-                        <option value="9-0999-0999">José Aguilar Brenes (Ortopedia)</option>
-                        <option value="2-0222-0222">María Gómez Sojo (Pediatría)</option>
-                        <option value="3-0333-0333">Lisandro Arguedas Masís (Medicina General)</option>
-                        <option value="1-0111-0111">Juan Pérez Aguilar (Cardiología)</option>
-                        <option value="5-0555-0555">Andrés Rojas Hernández (Oftalmología)</option>
-                        <option value="6-0666-0666">Laura Chacón Marín (Ginecología)</option>
-                        <option value="4-0444-0444">Sofía Mora Vargas (Dermatología)</option>
-                        <option value="7-0777-0777">Javier Morales Garbanzo (Pediatría)</option>
-                        <option value="8-0888-0888">Ana Navarro Solís (Neurología)</option>
-                        <option value="1-0101-0101">Claudia Solano Saenz (Oncología)</option>
-                        <option value="2-0202-0202">Carlos Vargas Badilla (Psiquiatría)</option>
-                        <option value="3-0303-0303">Marcela Gutiérrez Daniels (Endocrinología)</option>
-                        <option value="4-0404-0404">Alejandro Sánchez Romero (Urología)</option>
-                        <option value="8542-1231-8765">Pedro Mendoza Campos (Psicología)</option>
-                        <option value="2678-9876-5432">Carolina Gutiérrez López (Nutrición)</option>
-                        <option value="9785-5432-1234">Roberto Cruz Montero (Odontología)</option>
-                        <option value="4321-5678-9785">Verónica Solís Chaves (Dermatología)</option>
-                        <option value="7890-1234-2678">Fernando Méndez Castro (Cirugía General)</option>
-                        <option value="1234-5678-9012">Laura Salazar Ramírez (Neurología)</option>
-                        <option value="5678-9012-3456">Santiago Jiménez Solano (Ortopedia)</option>
-                        <option value="9012-3456-7890">Ana María Fernández Chacón (Ginecología)</option>
-                        <option value="3456-7890-1234">Martín Vargas Sánchez (Cardiología)</option>
-                        <option value="7890-1234-5678">María Rodríguez Gómez (Psiquiatría)</option>
-                        </select>
+                        <option value="9-0999-0999" data-correo="josuemarin2009@hotmail.com">José Aguilar Brenes (Ortopedia)</option>
+                        <option value="2-0222-0222" data-correo="blackride1988@mail.com">María Gómez Sojo (Pediatría)</option>
+                        <option value="3-0333-0333" data-correo="lisandro.arguedas@clinic.com">Lisandro Arguedas Masís (Medicina General)</option>
+                        <option value="1-0111-0111" data-correo="juan.perez@clinic.com">Juan Pérez Aguilar (Cardiología)</option>
+                        <option value="5-0555-0555" data-correo="andres.rojas@clinic.com">Andrés Rojas Hernández (Oftalmología)</option>
+                        <option value="6-0666-0666" data-correo="laura.chacon@clinic.com">Laura Chacón Marín (Ginecología)</option>
+                        <option value="4-0444-0444" data-correo="sofia.mora@clinic.com">Sofía Mora Vargas (Dermatología)</option>
+                        <option value="7-0777-0777" data-correo="javier.morales@clinic.com">Javier Morales Garbanzo (Pediatría)</option>
+                        <option value="8-0888-0888" data-correo="ana.navarro@clinic.com">Ana Navarro Solís (Neurología)</option>
+                        <option value="1-0101-0101" data-correo="claudia.solano@clinic.com">Claudia Solano Saenz (Oncología)</option>
+                        <option value="2-0202-0202" data-correo="carlos.vargas@clinic.com">Carlos Vargas Badilla (Psiquiatría)</option>
+                        <option value="3-0303-0303" data-correo="marcela.gutierrez@clinic.com">Marcela Gutiérrez Daniels (Endocrinología)</option>
+                        <option value="4-0404-0404" data-correo="alejandro.sanchez@clinic.com">Alejandro Sánchez Romero (Urología)</option>
+                        <option value="8542-1231-8765" data-correo="pedro.mendoza@clinic.com">Pedro Mendoza Campos (Psicología)</option>
+                        <option value="2678-9876-5432" data-correo="carolina.gutierrez@clinic.com">Carolina Gutiérrez López (Nutrición)</option>
+                        <option value="9785-5432-1234" data-correo="roberto.cruz@clinic.com">Roberto Cruz Montero (Odontología)</option>
+                        <option value="4321-5678-9785" data-correo="veronica.solis@clinic.com">Verónica Solís Chaves (Dermatología)</option>
+                        <option value="7890-1234-2678" data-correo="fernando.mendez@clinic.com">Fernando Méndez Castro (Cirugía General)</option>
+                        <option value="1234-5678-9012" data-correo="laura.salazar@clinic.com">Laura Salazar Ramírez (Neurología)</option>
+                        <option value="5678-9012-3456" data-correo="santiago.jimenez@clinic.com">Santiago Jiménez Solano (Ortopedia)</option>
+                        <option value="9012-3456-7890" data-correo="ana.fernandez@clinic.com">Ana María Fernández Chacón (Ginecología)</option>
+                        <option value="3456-7890-1234" data-correo="martin.vargas@clinic.com">Martín Vargas Sánchez (Cardiología)</option>
+                        <option value="7890-1234-5678" data-correo="maria.rodriguez@clinic.com">María Rodríguez Gómez (Psiquiatría)</option>
+                    </select>
+                    
                         
                 
                         <button id="btn-programar-cita">Programar cita</button>

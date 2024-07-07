@@ -8,7 +8,7 @@ const medicos = [
     horarios: "Martes a Sábado: 9am - 6pm",
     contacto: {
       telefono: "+506 8888-9999",
-      email: "joseaguilar@gmail.com"
+      email: "josuemarin2009@hotmail.com"
     },
     resenas: [
       { usuario: "Paciente13", calificacion: 4, comentario: "Buena atención y explicación detallada de mi lesión.<br>" },
@@ -24,7 +24,7 @@ const medicos = [
       horarios: "Lunes a Sábado: 9am - 6pm",
       contacto: {
         telefono: "+506 2222-8787",
-        email: "mariagomez@gmail.com"
+        email: "blackride1988@gmail.com"
       },
       resenas: [
         { usuario: "Usuario3", calificacion: 5, comentario: "La Dra. María es muy amable y atenta con los niños.<br>" },

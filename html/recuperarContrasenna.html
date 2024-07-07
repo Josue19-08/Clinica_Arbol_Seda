@@ -40,24 +40,20 @@
     <main>
         <div class="contenido">
             <div class="formulario">
-                <h2>Inicio de Sesión</h2>
+                <h2>Recuperación de Contraseña</h2>
                 <br>
                 <form id="formulario" method="post">
-                    <div class="usuarios">
-                        <label>Usuario (Cédula):</label>
-                        <input id="usuario" type="text" placeholder="##-####-####" required>
-                    </div>
                     <div class="usuarios">
                         <label>Contraseña:</label>
                         <input id="contrasenna" type="password" required>
                     </div>
-                    <input id="botonIngresar" type="submit" value="Iniciar Sesión">
+                    <div class="usuarios">
+                        <label>Repite la Contraseña:</label>
+                        <input id="contrasenna" type="password" required>
+                    </div>
+                    <input id="botonIngresar" type="submit" value="Actualizar contraseña" onclick="window.location.href='inicioSesion.html'">
+
                 </form>
-                <div class="registrarse">
-                    <br>
-                    <a href="registrar.html">¿Aún no tienes cuenta? Registrarse</a>
-                    <a href="olvidasteContrasenna.html">¿Olvidé mi contraseña?</a>
-                </div>
             </div>
         </div>
         <footer>

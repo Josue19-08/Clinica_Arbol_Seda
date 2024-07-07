@@ -1,10 +1,9 @@
-
+/* General */
 body {
     background-image: url('../img/inicio_registro.png');
     background-size: cover;
     background-repeat: no-repeat;
 }
-
 
 .contenido {
     background-color: rgba(255, 255, 255, 0.7);
@@ -13,13 +12,16 @@ body {
     max-width: 800px;
     margin: 0 auto;
     margin-top: 20px;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 footer {
-
     padding: 10px;
     position: fixed;
+    width: 100%;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
 }
 
 button {
@@ -31,12 +33,105 @@ button {
     cursor: pointer;
     border-radius: 5px;
     margin-right: 10px;
+    margin-bottom: 10px;
 }
 
 button:hover {
     background-color: #45a049;
 }
 
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+}
+
+.modal-header {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e5e5e5;
+    margin-bottom: 20px;
+}
+
+.modal-header h2 {
+    margin: 0;
+}
+
+.modal-body label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.modal-body input[type="text"],
+.modal-body input[type="date"],
+.modal-body input[type="time"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 5px 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button#guardarCambios {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button#guardarCambios:hover {
+    background-color: #45a049;
+}
+
+/* Schedule */
 .schedule {
     background-color: rgba(255, 255, 255, 0.7);
     padding: 20px;
@@ -81,6 +176,7 @@ button:hover {
     background-color: #64771a;
 }
 
+/* Table */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -98,6 +194,93 @@ th {
     background-color: #f2f2f2;
 }
 
+td:last-child {
+    display: flex;
+    flex-direction: column;
+}
+
+button.cancelar-btn, button.modificar-btn {
+    background-color: #d9534f;
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 5px 0;
+}
+
+button.modificar-btn {
+    background-color: #5bc0de;
+}
+
+button.cancelar-btn:hover {
+    background-color: #c9302c;
+}
+
+button.modificar-btn:hover {
+    background-color: #31b0d5;
+}
+
+/* Responsive styles */
+
+
+/* Estilos para el menú */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #333; /* Cambia este color por el que prefieras */
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    display: block;
+    color: white; /* Color del texto */
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background-color: #111; /* Color de fondo cuando se pasa el ratón por encima */
+}
+
+/* Estilos para el menú hamburguesa */
+.menu-hamburguesa {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: white; /* Color del icono de menú hamburguesa */
+}
+
+/* Estilos para dispositivos móviles */
+@media screen and (max-width: 767px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav ul li {
+        display: block;
+        text-align: left;
+    }
+
+    .menu-hamburguesa {
+        display: block;
+    }
+}
+
+
+
 /* Estilos para pantallas más pequeñas, como celulares */
 @media screen and (max-width: 767px) {
     nav ul li {
@@ -109,22 +292,47 @@ th {
         width: 100%;
         margin-bottom: 10px;
     }
+
+    .modal-content {
+        width: 90%;
+    }
+
+    .contenido,
+    .schedule {
+        width: 90%;
+        margin: 10px auto;
+    }
+
+    table, th, td {
+        font-size: 8px;
+    }
+
+    td:last-child {
+        display: block;
+        text-align: center;
+    }
 }
 
 /* Estilos para tabletas */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-
     .contenido,
     .schedule {
         max-width: 600px;
+    }
+
+    .modal-content {
+        width: 80%;
     }
 }
 
 /* Estilos para pantallas de escritorio */
 @media screen and (min-width: 1024px) {
-
     .contenido,
     .schedule {
         max-width: 800px;
+    }
+
+    .modal-content {
+        width: 50%;
     }
 }

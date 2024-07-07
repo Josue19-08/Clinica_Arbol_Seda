@@ -10,6 +10,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script> 
     <script src="../js/usuarioIniciado.js"></script>
     <script src="../js/olvidasteContrasenna.js"></script>
+    <script src="../js/menu.js"></script>
+
 </head>
 
 <body>
@@ -18,7 +20,11 @@
         <img src="../img/logoNombreSinFondo.png" alt="Imagen Inicial">
         <br><div id="estadoSesion"></div>
         <div id="cerrarSesion"><p>Salir</p></div>
-            <nav>
+        <nav>
+            <div class="menu-hamburguesa" id="menu-hamburguesa">
+                &#9776;
+            </div>
+            <ul id="menu">
                 <li><a href="../index.html">Inicio</a></li>
                 <li><a href="inicioSesion.html">Registro/Inicio Sesión</a></li>
                 <li><a href="agendarCita.html">Agendar Cita</a></li>
@@ -28,7 +34,8 @@
                 <li><a href="informacionContacto.html">Información Contacto</a></li>
                 <li><a href="preguntasFrecuentes.html">Preguntas Frecuentes(FAQ)</a></li>
                 <li><a href="politicas.html">Política de privacidad y términos de uso</a></li>
-            </nav>
+            </ul>
+        </nav>
     </header>
 
     <main>

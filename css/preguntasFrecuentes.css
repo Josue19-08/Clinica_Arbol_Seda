@@ -4,6 +4,61 @@ body {
     background-repeat: no-repeat;
 }
 
+/* Estilos para el menú */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #333; /* Cambia este color por el que prefieras */
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    display: block;
+    color: white; /* Color del texto */
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background-color: #111; /* Color de fondo cuando se pasa el ratón por encima */
+}
+
+/* Estilos para el menú hamburguesa */
+.menu-hamburguesa {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: white; /* Color del icono de menú hamburguesa */
+}
+
+/* Estilos para dispositivos móviles */
+@media screen and (max-width: 767px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav ul li {
+        display: block;
+        text-align: left;
+    }
+
+    .menu-hamburguesa {
+        display: block;
+    }
+}
+
+
 /* Estilos para pantallas más pequeñas, como celulares */
 @media screen and (max-width: 767px) {
 

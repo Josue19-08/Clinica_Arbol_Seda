@@ -11,6 +11,8 @@
     <script src="../js/buscarMedicos.js" defer></script>
     <script src="../js/pagination.js" defer></script>
     <script src="../js/usuarioIniciado.js"></script>
+    <script src="../js/menu.js"></script>
+
 </head>
 <body>
     <header>
@@ -18,43 +20,55 @@
         <br><div id="estadoSesion"></div>
         <div id="cerrarSesion"><p>Salir</p></div>
         <nav>
-            <li><a href="../index.html">Inicio</a></li>
-            <li><a href="inicioSesion.html">Registro/Inicio Sesión</a></li>
-            <li><a href="agendarCita.html">Agendar Cita</a></li>
-            <li><a href="buscarMedicos.html">Buscar Médico</a></li>
-            <li><a href="sobreNosotros.html">Sobre Nosotros</a></li>
-            <li><a href="servicios.html">Servicios</a></li>
-            <li><a href="informacionContacto.html">Información Contacto</a></li>
-            <li><a href="preguntasFrecuentes.html">Preguntas Frecuentes(FAQ)</a></li>
-            <li><a href="politicas.html">Política de privacidad y términos de uso</a></li>
+            <div class="menu-hamburguesa" id="menu-hamburguesa">
+                &#9776;
+            </div>
+            <ul id="menu">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="inicioSesion.html">Registro/Inicio Sesión</a></li>
+                <li><a href="agendarCita.html">Agendar Cita</a></li>
+                <li><a href="buscarMedicos.html">Buscar Médico</a></li>
+                <li><a href="sobreNosotros.html">Sobre Nosotros</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="informacionContacto.html">Información Contacto</a></li>
+                <li><a href="preguntasFrecuentes.html">Preguntas Frecuentes(FAQ)</a></li>
+                <li><a href="politicas.html">Política de privacidad y términos de uso</a></li>
+            </ul>
         </nav>
     </header>
 
     <main>
         <div class="buscar">
             <label class="searchLabel">Buscar doctor</label><br>
+            <select id="searchCriteria">
+                <option value="id">Identificación</option>
+                <option value="nombre">Nombre</option>
+                <option value="especialidad">Especialidad</option>
+                <option value="ubicacion">Ubicación</option>
+                <option value="ninguno">Sin especificar</option>
+            </select>
             <input type="text" id="searchInput">
         </div>
         
+        <div id="autocomplete-container" class="autocomplete-items"></div>
+
         <div class="contenido">
-            
-            
             <table id="medicosTable">
                 <thead>
-                        <tr>
-                            <th class="id">Identificación</th>
-                            <th class="nombre">Nombre</th>
-                            <th class="especialidad">Especialidad</th>
-                            <th class="ubicacion">Ubicación</th>
-                        </tr>
+                    <tr>
+                        <th class="id">Identificación</th>
+                        <th class="nombre">Nombre</th>
+                        <th class="especialidad">Especialidad</th>
+                        <th class="ubicacion">Ubicación</th>
+                    </tr>
                 </thead>
-                
                 <tbody id="medicosBody">
                     <!-- Aquí se llenarán dinámicamente los datos de los médicos -->
                 </tbody>
             </table>
         </div>
-        <div class="columnas"><label for="rowsPerPageInput">Filas por página:  </label><br>
+        <div class="columnas">
+            <label for="rowsPerPageInput">Filas por página: </label><br>
             <input type="number" id="rowsPerPageInput" value="10">
         </div>
         <div id="pagination"></div>
@@ -66,7 +80,5 @@
             <p>Derechos de autor 2024</p>
         </footer>
     </main>
-
-    
 </body>
 </html>

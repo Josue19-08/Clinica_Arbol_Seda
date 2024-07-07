@@ -6,6 +6,12 @@
     <title>Modificar Cita</title>
     <link rel="stylesheet" type="text/css" href="../css/estilo.css">
     <link rel="stylesheet" type="text/css" href="../css/administrarCitas.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+      emailjs.init('u5alWm-YIWRD1U1_q');
+    </script>
+    <script src="../js/menu.js"></script>
+
 </head>
 <body>
     <header>
@@ -14,7 +20,10 @@
         <div id="estadoSesion"></div>
         <div id="cerrarSesion"><p>Salir</p></div>
         <nav>
-            <ul> 
+            <div class="menu-hamburguesa" id="menu-hamburguesa">
+                &#9776;
+            </div>
+            <ul id="menu">
                 <li><a href="../index.html">Inicio</a></li>
                 <li><a href="inicioSesion.html">Registro/Inicio Sesión</a></li>
                 <li><a href="agendarCita.html">Agendar Cita</a></li>
@@ -34,10 +43,10 @@
                 <thead>
                     <tr>
                         <th>Médico</th>
-                        <th>Cédula Paciente</th>
-                        <th>Paciente</th>
                         <th>Fecha</th>
                         <th>Hora</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody id="citas-body">
@@ -45,14 +54,48 @@
             </table>
         </div>
     </main>
-    <footer>
-        <p>Síguenos en redes sociales</p>
-        <div>
-            <a href="https://www.facebook.com/clinicabiblica/?locale=es_LA">Facebook</a>
+
+    <!-- Modal para modificar cita -->
+    <div id="modalModificar" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-header">
+                <h2>Modificar Cita</h2>
+            </div>
+            <div class="modal-body">
+                <label for="modal-medico">Médico:</label>
+                <input type="text" id="modal-medico" name="medico" readonly><br>
+                <label for="modal-fecha">Fecha:</label>
+                <input type="date" id="modal-fecha" name="fecha"><br>
+                <label for="modal-hora">Hora:</label>
+                <input type="time" id="modal-hora" name="hora"><br>
+            </div>
+            <div class="modal-footer">
+                <button id="guardarCambios">Guardar Cambios</button>
+            </div>
         </div>
-        <p>Derechos de autor 2024</p>
-    </footer>
-    
+    </div>
+
+    <!-- Modal para confirmar cita -->
+    <div id="modalConfirmar" class="modal">
+        <div class="modal-content">
+            <span class="close-confirmar">&times;</span>
+            <div class="modal-header">
+                <h2>Confirmar Cita</h2>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <h3>Confirmación Doctor</h3>
+                    <button id="confirmarDoctor">Confirmar</button>
+                </div>
+                <div>
+                    <h3>Confirmación Paciente</h3>
+                    <button id="confirmarPaciente">Confirmar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="../js/usuarioIniciado.js"></script>
     <script src="../js/administrarCitas.js"></script>
 </body>
