@@ -248,7 +248,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Función para enviar correo utilizando EmailJS
     function enviarCorreo(correo, tipo) {
-        emailjs.send('service_m7rotwq', 'template_p5anz3g', correo)
+        emailjs.send('service_3r9jxxp', 'template_vukasf1', correo)
             .then(function(response) {
                 console.log(`Correo de ${tipo} enviado con éxito!`, response.status, response.text);
                 alert(`Correo de ${tipo} enviado con éxito`);
@@ -260,7 +260,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Función para enviar correo de confirmación al doctor utilizando EmailJS
     function enviarCorreoDoctor(correo, tipo) {
-        emailjs.send('service_m7rotwq', 'template_bnv5eh5', correo)
+        emailjs.send('service_3r9jxxp', 'template_53vr2kr', correo)
             .then(function(response) {
                 console.log(`Correo de ${tipo} enviado con éxito al doctor!`, response.status, response.text);
                 alert(`Correo de ${tipo} enviado con éxito al doctor`);
